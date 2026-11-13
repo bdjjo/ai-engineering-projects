@@ -1,0 +1,67 @@
+SAMPLE 1 | seed=42 | temperature=0.8 | top_k=40
+ROMEO:
+And to the a suffe from power, crest the earth sit,
+To he shall am be to rest me of the dead.
+What, my gold to day you have the apt.
+
+Second Messenger:
+What give be pautory;
+The sigh paster in thing the abty,
+Should stonest to the drey,
+A crather off the hranger,
+For break fally and be him a mine.
+
+MENENIUS:
+What would not I am forth your fair.
+
+SICINIUS:
+How is the wagems
+But by the heart: thou lad with the petch.
+
+First Murder:
+He's not myself
+He is with and thy brother's of thee.
+
+NORTANGEL
+
+SAMPLE 2 | seed=43 | temperature=0.8 | top_k=40
+First Citizen:
+And friend to-branish, that I'll am not
+O thou purle breasting.
+
+KING RICHARD III:
+Why, be did the many, whose will and a burs,
+Have your vil tenant to his wrug, I have
+Have me him sister me to swon pluful me
+That the vereice of us a tune; and my mother.
+By so, it will freccul a and hears spluck
+To your fair of silted in the mannage:
+To cke be your father of the friend
+Sighning of and dang and the wallow of the
+ches he s my grace.
+
+FRIAR LAURENCE:
+You prial on my 
+
+SAMPLE 3 | seed=44 | temperature=0.8 | top_k=40
+To be, or not to be be bid;
+You bit not my siect must at him triful.
+
+MENOMINIUS:
+The hands; thou cent a hour din menal woman grievy.
+
+CORIOLANUS:
+Lesir, then bury, that be a wise
+the late the wity and too aul honouralm of a man:
+For the ss, instorrest and a hangs,
+And he had be part your country.'Twas the greage of you;
+Which a plands off and of a pardon to her mine
+I shall would be for the tench and country.
+
+CORIOLANUS:
+O, what, he lif?
+
+First Messenator:
+There is him, he comes!
+
+Ser

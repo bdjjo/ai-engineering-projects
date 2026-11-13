@@ -1,0 +1,4 @@
+# CPU: install torch with --index-url https://download.pytorch.org/whl/cpu first.
+# CUDA: use the matching command from https://pytorch.org/get-started/locally/.
+torch==2.7.1
+numpy==2.2.6

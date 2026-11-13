@@ -1,0 +1,77 @@
+{
+  "checkpoint_step": 2500,
+  "tokenizer": "char",
+  "protocol": "every target once; context resets every block_size tokens; first token excluded",
+  "block_size": 128,
+  "smoothing_alpha": 1.0,
+  "splits": {
+    "val": {
+      "uniform": {
+        "cross_entropy_nats": 4.174387269895637,
+        "perplexity": 64.99999999999999,
+        "bits_per_token": 6.022367813028454,
+        "bits_per_byte": 6.022367813028454,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "unigram": {
+        "cross_entropy_nats": 3.33264790871274,
+        "perplexity": 28.012417911889543,
+        "bits_per_token": 4.807994610928845,
+        "bits_per_byte": 4.807994610928845,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "bigram": {
+        "cross_entropy_nats": 2.4742593382226654,
+        "perplexity": 11.87291004501944,
+        "bits_per_token": 3.569601677127048,
+        "bits_per_byte": 3.5696016771270473,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "gpt": {
+        "cross_entropy_nats": 1.8479433184696583,
+        "perplexity": 6.3467528408608285,
+        "bits_per_token": 2.6660186614000705,
+        "bits_per_byte": 2.6660186614000705,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      }
+    },
+    "test": {
+      "uniform": {
+        "cross_entropy_nats": 4.174387269895637,
+        "perplexity": 64.99999999999999,
+        "bits_per_token": 6.022367813028454,
+        "bits_per_byte": 6.022367813028454,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "unigram": {
+        "cross_entropy_nats": 3.3619668142967902,
+        "perplexity": 28.8458695914366,
+        "bits_per_token": 4.850292850619246,
+        "bits_per_byte": 4.850292850619246,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "bigram": {
+        "cross_entropy_nats": 2.489535450326529,
+        "perplexity": 12.0556743598101,
+        "bits_per_token": 3.5916404483033557,
+        "bits_per_byte": 3.5916404483033557,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      },
+      "gpt": {
+        "cross_entropy_nats": 1.891956749264054,
+        "perplexity": 6.632333806451199,
+        "bits_per_token": 2.729516619739655,
+        "bits_per_byte": 2.7295166197396545,
+        "scored_tokens": 55769,
+        "scored_bytes": 55769
+      }
+    }
+  }
+}

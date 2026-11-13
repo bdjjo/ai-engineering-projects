@@ -1,0 +1,30 @@
+{
+  "policy": "all three predefined prompts and seeds; no rejected samples or editing",
+  "checkpoint_step": 2500,
+  "samples": [
+    {
+      "prompt": "ROMEO:\n",
+      "seed": 42,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "ROMEO:\nMy thou far the coman my courde.\n\nSICINIO:\nTo no the eread head like of thre craise.\n\nCAGULIO:\nGod, the is the u\nI come the proced that not lord, the the fall for not\nI haven is to but othen has and day the should;\nWhat would then like wath\nThey hold diff the all frosess, it but cony I sway,\nAnd abe"
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "seed": 43,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "First Citizen:\nThe this of a your the place bear thee juctites:\nThou to rilds grear thee known wor, the lears.\n\nNARTIA:\nBee these riest, and yet caurte,\nBut shall his plaice and have thunds you seasir thee\nAnd nike for the rive thou olduners.\nNurse like not so is enamen, hen bauty;\nWho compery and eve cons and for"
+    },
+    {
+      "prompt": "To be, or not to be",
+      "seed": 44,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "To be, or not to be ling of shall agave to you seatth,\nThe pray of a the to aste deady our tis,\nIf the spans of coun juck I the now bear'd hus shir.\n\nANGELE:\nO she sight the is restake this be of you should.\n\nEDWARD:\nMy I don brother this nown hand my day have!\nThat reeadst ome undents at servy wreath oner;\nI elploos?"
+    }
+  ]
+}

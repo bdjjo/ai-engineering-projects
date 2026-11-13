@@ -1,0 +1,30 @@
+{
+  "policy": "all three predefined prompts and seeds; no rejected samples or editing",
+  "checkpoint_step": 2500,
+  "samples": [
+    {
+      "prompt": "ROMEO:\n",
+      "seed": 42,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "ROMEO:\nAnd to the a suffe from power, crest the earth sit,\nTo he shall am be to rest me of the dead.\nWhat, my gold to day you have the apt.\n\nSecond Messenger:\nWhat give be pautory;\nThe sigh paster in thing the abty,\nShould stonest to the drey,\nA crather off the hranger,\nFor break fally and be him a mine.\n\nMENENIUS:\nWhat would not I am forth your fair.\n\nSICINIUS:\nHow is the wagems\nBut by the heart: thou lad with the petch.\n\nFirst Murder:\nHe's not myself\nHe is with and thy brother's of thee.\n\nNORTANGEL"
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "seed": 43,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "First Citizen:\nAnd friend to-branish, that I'll am not\nO thou purle breasting.\n\nKING RICHARD III:\nWhy, be did the many, whose will and a burs,\nHave your vil tenant to his wrug, I have\nHave me him sister me to swon pluful me\nThat the vereice of us a tune; and my mother.\nBy so, it will freccul a and hears spluck\nTo your fair of silted in the mannage:\nTo cke be your father of the friend\nSighning of and dang and the wallow of the\nches he s my grace.\n\nFRIAR LAURENCE:\nYou prial on my "
+    },
+    {
+      "prompt": "To be, or not to be",
+      "seed": 44,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300,
+      "text": "To be, or not to be be bid;\nYou bit not my siect must at him triful.\n\nMENOMINIUS:\nThe hands; thou cent a hour din menal woman grievy.\n\nCORIOLANUS:\nLesir, then bury, that be a wise\nthe late the wity and too aul honouralm of a man:\nFor the ss, instorrest and a hangs,\nAnd he had be part your country.'Twas the greage of you;\nWhich a plands off and of a pardon to her mine\nI shall would be for the tench and country.\n\nCORIOLANUS:\nO, what, he lif?\n\nFirst Messenator:\nThere is him, he comes!\n\nSer"
+    }
+  ]
+}

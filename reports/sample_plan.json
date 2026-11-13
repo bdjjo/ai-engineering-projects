@@ -1,0 +1,25 @@
+{
+  "samples": [
+    {
+      "prompt": "ROMEO:\n",
+      "seed": 42,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300
+    },
+    {
+      "prompt": "First Citizen:\n",
+      "seed": 43,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300
+    },
+    {
+      "prompt": "To be, or not to be",
+      "seed": 44,
+      "temperature": 0.8,
+      "top_k": 40,
+      "tokens": 300
+    }
+  ]
+}

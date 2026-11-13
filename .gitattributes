@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
+*.toml text eol=lf
+*.txt text eol=lf
+*.png binary
+# Generated samples are preserved verbatim, including trailing model-produced spaces.
+reports/*/samples.txt whitespace=-blank-at-eol

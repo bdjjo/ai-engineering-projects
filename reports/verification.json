@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "timestamp_utc": "2026-11-12T22:54:01.885334+00:00",
+  "python": "3.12.14",
+  "platform": "Windows",
+  "hosted_ci_executed": false,
+  "checks": [
+    {
+      "command": "python -m pip check",
+      "exit_code": 0,
+      "stdout": "No broken requirements found.",
+      "stderr": ""
+    },
+    {
+      "command": "python -m ruff check .",
+      "exit_code": 0,
+      "stdout": "All checks passed!",
+      "stderr": ""
+    },
+    {
+      "command": "python -m ruff format --check .",
+      "exit_code": 0,
+      "stdout": "26 files already formatted",
+      "stderr": ""
+    },
+    {
+      "command": "python -m pytest -q --basetemp=.local/pytest-temp",
+      "exit_code": 0,
+      "stdout": ".....................................                                    [100%]\n37 passed in 4.86s",
+      "stderr": ""
+    }
+  ]
+}

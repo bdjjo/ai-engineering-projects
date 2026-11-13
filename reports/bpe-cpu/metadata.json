@@ -1,0 +1,103 @@
+{
+  "run_name": "bpe-cpu",
+  "started_utc": "2026-11-12T22:46:27.796353+00:00",
+  "config": {
+    "model": {
+      "vocab_size": 512,
+      "block_size": 128,
+      "n_layer": 4,
+      "n_head": 4,
+      "n_embd": 128,
+      "dropout": 0.1,
+      "bias": true,
+      "attention_backend": "manual"
+    },
+    "train": {
+      "max_steps": 2500,
+      "batch_size": 16,
+      "learning_rate": 0.001,
+      "min_lr": 0.0001,
+      "warmup_steps": 100,
+      "weight_decay": 0.1,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "grad_clip": 1.0,
+      "eval_interval": 250,
+      "eval_batches": 20,
+      "log_interval": 100,
+      "seed": 1337,
+      "device": "cpu",
+      "num_threads": 4
+    }
+  },
+  "parameters": 875264,
+  "environment": {
+    "python": "3.12.14",
+    "pytorch": "2.7.1+cpu",
+    "os": "Windows",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel",
+    "logical_cpus": 12,
+    "torch_threads": 4,
+    "device": "cpu",
+    "cuda_available": false,
+    "accelerator": null,
+    "precision": "float32",
+    "deterministic_algorithms": true
+  },
+  "data_manifest": {
+    "format_version": 1,
+    "source_name": "shakespeare.txt",
+    "source_sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed",
+    "source_bytes": 1115394,
+    "source_characters": 1115394,
+    "tokenizer": "bpe",
+    "vocab_size": 512,
+    "tokenizer_sha256": "da4a2c73765c26bd9736703e7c32a5f156952307964ba507afb03ba42ae4639b",
+    "split_policy": "contiguous 90/5/5 characters; fit tokenizer on train only",
+    "splits": {
+      "train": {
+        "start_character": 0,
+        "end_character": 1003854,
+        "characters": 1003854,
+        "bytes": 1003854,
+        "tokens": 627274,
+        "characters_per_token": 1.6003437094475461,
+        "array_sha256": "8f9e755ac0829b552095fa52bc3b70b2d0c6f8c13660b7c19f5d16c56a03d952"
+      },
+      "val": {
+        "start_character": 1003854,
+        "end_character": 1059624,
+        "characters": 55770,
+        "bytes": 55770,
+        "tokens": 35494,
+        "characters_per_token": 1.5712514791232322,
+        "array_sha256": "05ddfa31cbb6c8a5580ec81df9df3d089dd8bef95b371f76b62abc19bd9b9b83"
+      },
+      "test": {
+        "start_character": 1059624,
+        "end_character": 1115394,
+        "characters": 55770,
+        "bytes": 55770,
+        "tokens": 35645,
+        "characters_per_token": 1.5645953149109273,
+        "array_sha256": "5f525e4724fd7eebf88cd0e1102f86ac20bf8d0c713d90276285f98281188c09"
+      }
+    }
+  },
+  "training_source_hashes": {
+    "evaluate.py": "016a983787095335bf2895824d1dab0ae994eec6cba23230e5c785283c6af805",
+    "generate.py": "d29b1848664536e25e140e7293994e10ccc1a911cd75cceff2469098e97dd791",
+    "requirements.txt": "3337cce81e6dd897808cd028c38feaaf0b2eef78ec8f7a496a6b715451ed8b05",
+    "src/gpt2_scratch/__init__.py": "377c80c0f0e54e3707f0bd20996c724140b910427590a2a20a2f139763823873",
+    "src/gpt2_scratch/config.py": "2b2ccff6b0cb6f9462347657004a2784a1e1b576abea9fbc6bcb43d734d8551e",
+    "src/gpt2_scratch/data.py": "d89680759ea6c056d4e9d64d5c6dda55ba1aca76b52340cfcc633127b7b18724",
+    "src/gpt2_scratch/evaluation.py": "0819883060094983336135b3f42fa60b26bfe91af2e41bf88c0edb7d75e64115",
+    "src/gpt2_scratch/generation.py": "4d8df6619b57275ea8370ccd602c96f086a72fffa784617772754ff4cbdba8ba",
+    "src/gpt2_scratch/model.py": "dfe9846577c56985bb9e39e4add841411cdee79d1d1978d957ff86b7f4e72a75",
+    "src/gpt2_scratch/runtime.py": "48c6b7b598e68062afd1a5f19c1faa6aeab6be279af1bf66059d318d97d8d9d7",
+    "src/gpt2_scratch/tokenizer.py": "a5d126b9137cb5777665d87bca40100f51054ffe13530149a6c8cdefaaf13301",
+    "src/gpt2_scratch/trainer.py": "fc30088f5bc97d44d58dbc8f957e60169f35b74007010e82d5d32626d065dfb0",
+    "train.py": "e5c6b07417fa056266eec6636151e8b825b648a799baa1db93006646bef1b8b0"
+  }
+}

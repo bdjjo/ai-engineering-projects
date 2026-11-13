@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "steps_completed": 2500,
+  "best_step": 2500,
+  "best_val_loss": 1.8462312757968902,
+  "parameters": 818048,
+  "training_tokens": 5120000,
+  "training_seconds": 524.6219357996015,
+  "elapsed_seconds": 550.5198786000255,
+  "training_tokens_per_second": 9759.40892024723
+}

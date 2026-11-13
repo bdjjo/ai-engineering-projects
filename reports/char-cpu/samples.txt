@@ -1,0 +1,39 @@
+SAMPLE 1 | seed=42 | temperature=0.8 | top_k=40
+ROMEO:
+My thou far the coman my courde.
+
+SICINIO:
+To no the eread head like of thre craise.
+
+CAGULIO:
+God, the is the u
+I come the proced that not lord, the the fall for not
+I haven is to but othen has and day the should;
+What would then like wath
+They hold diff the all frosess, it but cony I sway,
+And abe
+
+SAMPLE 2 | seed=43 | temperature=0.8 | top_k=40
+First Citizen:
+The this of a your the place bear thee juctites:
+Thou to rilds grear thee known wor, the lears.
+
+NARTIA:
+Bee these riest, and yet caurte,
+But shall his plaice and have thunds you seasir thee
+And nike for the rive thou olduners.
+Nurse like not so is enamen, hen bauty;
+Who compery and eve cons and for
+
+SAMPLE 3 | seed=44 | temperature=0.8 | top_k=40
+To be, or not to be ling of shall agave to you seatth,
+The pray of a the to aste deady our tis,
+If the spans of coun juck I the now bear'd hus shir.
+
+ANGELE:
+O she sight the is restake this be of you should.
+
+EDWARD:
+My I don brother this nown hand my day have!
+That reeadst ome undents at servy wreath oner;
+I elploos?
