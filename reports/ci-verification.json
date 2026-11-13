@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/bdjjo/gpt2-from-scratch",
+  "workflow": "Tests",
+  "run_id": 43368239060,
+  "run_url": "https://github.com/bdjjo/gpt2-from-scratch/actions/runs/43368239060",
+  "tested_commit": "c93458e5496286529b1913958453518deb2b5824",
+  "scope": "Initial source publication; later documentation commits have their own live workflow runs.",
+  "jobs": [
+    {"id": 131697648160, "name": "test (ubuntu-latest, 3.11)", "status": "completed", "conclusion": "success"},
+    {"id": 131697648371, "name": "test (ubuntu-latest, 3.12)", "status": "completed", "conclusion": "success"},
+    {"id": 131697648283, "name": "test (windows-latest, 3.12)", "status": "completed", "conclusion": "success"}
+  ]
+}

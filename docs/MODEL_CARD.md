@@ -54,8 +54,10 @@ test targets once with context reset at each 128-token block. Uniform, add-one u
 and add-one bigram baselines use the same held-out targets. Perplexity, cross-entropy,
 and byte-normalized NLL are reported in [RESULTS.md](RESULTS.md).
 
-Only the supplied CPU runs and local Windows tests are measured. The GPU preset and
-GitHub Actions matrix are not evidence of completed GPU or hosted CI execution.
+The training measurements come from the supplied local CPU runs. Automated checks
+also run on Ubuntu/Python 3.11 and 3.12 and Windows/Python 3.12 through
+[GitHub Actions](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml).
+The GPU preset has not been trained or benchmarked.
 
 ## Limitations
 

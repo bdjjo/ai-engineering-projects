@@ -1,5 +1,7 @@
 # GPT-2 From Scratch in PyTorch
 
+[![Tests](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml/badge.svg)](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml)
+
 A compact GPT-style language model trained from random initialization on Tiny Shakespeare.
 The project implements byte-pair encoding, explicit causal attention, training, evaluation,
 and text generation, with reproducible experiment evidence and a detailed learning guide.
@@ -53,6 +55,13 @@ Text can resemble dialogue while remaining incoherent. One training seed is repo
 the runs are not a controlled comparison of tokenizer quality.
 
 ## Run it
+
+For a fresh checkout:
+
+```bash
+git clone https://github.com/bdjjo/gpt2-from-scratch.git
+cd gpt2-from-scratch
+```
 
 Use Python **3.11 or 3.12**. The recorded environment is Windows / Python 3.12.14 /
 PyTorch 2.7.1 CPU. On Windows PowerShell, from this folder:
@@ -175,8 +184,9 @@ report with `python scripts/verify_project.py`.
 
 The tests cover tokenization, data isolation, causal attention, gradients, tiny-batch
 overfitting, generation reproducibility, evaluation coverage, and checkpoint recovery.
-The GitHub Actions workflow configures Linux and Windows checks. Hosted CI has to run
-after publication; the existence of the workflow is not a passing CI result.
+The GitHub Actions workflow runs these checks on Ubuntu with Python 3.11 and 3.12,
+and Windows with Python 3.12. See the [hosted test results](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml)
+for the status of each published commit.
 
 ## Learning and attribution
 

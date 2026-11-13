@@ -126,8 +126,12 @@ resume, and complete final-block evaluation.
 
 Additional end-to-end commands were run locally: data preparation for both tokenizers,
 a 30-update smoke training run, saved-checkpoint generation, full final evaluation,
-benchmark execution, and report export. The committed CI workflow has not run on
-GitHub yet. The GPU preset has not been trained or benchmarked.
+benchmark execution, and report export. The published repository also runs checks on
+Ubuntu with Python 3.11/3.12 and Windows with Python 3.12; see the
+[GitHub Actions results](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml)
+for commit-specific status. All three jobs passed for the initial published source;
+the commit and run identifiers are recorded in [ci-verification.json](../reports/ci-verification.json).
+The GPU preset has not been trained or benchmarked.
 
 To reproduce the reference experiment commands, start with fresh output directories:
 

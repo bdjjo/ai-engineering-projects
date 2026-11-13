@@ -1,22 +1,26 @@
 # Publish this project on GitHub
 
-The local project is prepared for publication. Creating a public repository and
-pushing it are separate actions; the files alone do not mean it has been uploaded.
+The project is published publicly at
+[bdjjo/gpt2-from-scratch](https://github.com/bdjjo/gpt2-from-scratch), with `main` as
+the default branch. [GitHub Actions](https://github.com/bdjjo/gpt2-from-scratch/actions/workflows/ci.yml)
+shows automated test results for each published commit.
 
-## Suggested repository presentation
+## Repository presentation
 
 - **Name:** `gpt2-from-scratch`
 - **Description:** `GPT-style language modeling in clean PyTorch: byte BPE, explicit causal attention, reproducible CPU training, and measured evaluation.`
 - **Topics:** `pytorch`, `transformer`, `gpt`, `language-model`, `bpe`, `deep-learning`, `machine-learning`, `reproducibility`
-- **Visibility:** Public when you are ready to share it with recruiters.
+- **Visibility:** Public.
 - **License:** MIT for the project code; data provenance is documented separately.
 
 Pin the repository on your profile after publishing. The README, measured report,
 and generated samples should be the first things a reviewer can find.
 
-## Option A: use Git from this folder
+## Initial publication with Git (completed)
 
-The workspace was already initialized as an empty Git repository. First review:
+The instructions below document the initial import, which has already been completed
+for this workspace. Do not recreate the repository or add `origin` again. To inspect
+the current connection:
 
 ```powershell
 git status --short
@@ -28,9 +32,9 @@ temporary files. Include source, docs, configs, tests, and the small reports fol
 
 Create an **empty** repository under your GitHub account. Leave GitHub's “add README,”
 license, and `.gitignore` options unchecked because these files already exist here.
-After creating it, use the HTTPS URL GitHub shows. For the connected account and
-suggested name, that URL would be `https://github.com/bdjjo/gpt2-from-scratch.git`;
-this guide does not assert that the remote repository already exists.
+For this published project, the HTTPS remote is
+`https://github.com/bdjjo/gpt2-from-scratch.git`. The initial import used the following
+commands; they are retained as a reference for publishing a different new repository.
 
 ```powershell
 git add .github .gitattributes .gitignore configs data/README.md docs reports scripts src tests
@@ -50,7 +54,22 @@ GitHub sign-in flow when prompted.
 
 The command sequence follows GitHub's [local repository publishing guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 
-## Option B: use the source ZIP
+## Publish future updates
+
+Make and verify your changes, then stage the specific files you intend to publish:
+
+```powershell
+git status --short
+git add README.md
+git diff --cached
+git commit -m "Update project documentation"
+git push
+```
+
+The example stages only `README.md`; substitute the files you actually changed.
+For code changes, run the test and style checks before committing.
+
+## Sharing the source ZIP
 
 `dist/gpt2-from-scratch-portfolio.zip` contains an explicit allowlist of source, docs,
 tests, configs, and small report assets. It omits the environment, data arrays, and
@@ -62,8 +81,8 @@ Preserve the `.github` directory so CI can run.
 
 1. Open the repository's Actions tab and wait for the Tests workflow to finish.
 2. Verify that the README renders its graphs, links, and architecture diagram.
-3. Verify that tests pass on the configured Linux and Windows runners. Until then,
-   only the local Windows run is verified; no CI result is claimed.
+3. Verify that tests pass on the configured Linux and Windows runners for the commit
+   you are sharing; consult the linked Actions run rather than assuming success.
 4. Add the description/topics and pin the repository to your profile.
 5. If you create a release, attach weights only as release assets if desired. The
    source repository intentionally excludes `.pt` files.
