@@ -22,6 +22,9 @@ jobs:
           - os: windows-latest
             python: '3.12'
             project: 01-gpt2-from-scratch
+          - os: ubuntu-latest
+            python: '3.12'
+            project: 02-dpo-training-pipeline
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     defaults:
@@ -47,3 +50,6 @@ jobs:
           python -m ruff format --check .
       - name: Test math, data, and checkpoint recovery
         run: python -m pytest -q
+      - name: Exercise SFT and DPO adapter training
+        if: matrix.project == '02-dpo-training-pipeline'
+        run: python scripts/smoke.py

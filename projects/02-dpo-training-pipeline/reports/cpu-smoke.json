@@ -1,0 +1,216 @@
+{
+  "scope": "synthetic CPU engineering check; no human preference or Llama 1B result",
+  "torch": "2.7.1+cpu",
+  "seed": 1337,
+  "sft": [
+    {
+      "step": 0,
+      "validation": {
+        "loss": 3.472802460193634,
+        "examples": 4
+      }
+    },
+    {
+      "step": 2,
+      "train_loss": 3.4802722930908203,
+      "validation": {
+        "loss": 3.4213265776634216,
+        "examples": 4
+      }
+    },
+    {
+      "step": 4,
+      "train_loss": 3.4156922101974487,
+      "validation": {
+        "loss": 3.3550406098365784,
+        "examples": 4
+      }
+    },
+    {
+      "step": 6,
+      "train_loss": 3.3554060459136963,
+      "validation": {
+        "loss": 3.2841758131980896,
+        "examples": 4
+      }
+    },
+    {
+      "step": 8,
+      "train_loss": 3.264805793762207,
+      "validation": {
+        "loss": 3.2268399000167847,
+        "examples": 4
+      }
+    },
+    {
+      "step": 10,
+      "train_loss": 3.1958175897598267,
+      "validation": {
+        "loss": 3.184617817401886,
+        "examples": 4
+      }
+    },
+    {
+      "step": 12,
+      "train_loss": 3.150435447692871,
+      "validation": {
+        "loss": 3.1496344804763794,
+        "examples": 4
+      }
+    },
+    {
+      "step": 14,
+      "train_loss": 3.1278873682022095,
+      "validation": {
+        "loss": 3.1179386377334595,
+        "examples": 4
+      }
+    },
+    {
+      "step": 16,
+      "train_loss": 3.094179153442383,
+      "validation": {
+        "loss": 3.0891088247299194,
+        "examples": 4
+      }
+    },
+    {
+      "step": 18,
+      "train_loss": 3.0659618377685547,
+      "validation": {
+        "loss": 3.064280331134796,
+        "examples": 4
+      }
+    },
+    {
+      "step": 20,
+      "train_loss": 3.0539584159851074,
+      "validation": {
+        "loss": 3.045360267162323,
+        "examples": 4
+      }
+    }
+  ],
+  "dpo": [
+    {
+      "step": 0,
+      "validation": {
+        "loss": 0.6931471824645996,
+        "examples": 4,
+        "reward_margin": 0.0,
+        "reward_accuracy": 0.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 2,
+      "train_loss": 0.6863000690937042,
+      "validation": {
+        "loss": 0.6806723773479462,
+        "examples": 4,
+        "reward_margin": 0.02510933903977275,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 4,
+      "train_loss": 0.6750713586807251,
+      "validation": {
+        "loss": 0.6711922436952591,
+        "examples": 4,
+        "reward_margin": 0.044410563074052334,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 6,
+      "train_loss": 0.666504979133606,
+      "validation": {
+        "loss": 0.664518415927887,
+        "examples": 4,
+        "reward_margin": 0.058116127736866474,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 8,
+      "train_loss": 0.6608729362487793,
+      "validation": {
+        "loss": 0.6599142700433731,
+        "examples": 4,
+        "reward_margin": 0.06763007957488298,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 10,
+      "train_loss": 0.6582777500152588,
+      "validation": {
+        "loss": 0.6563618928194046,
+        "examples": 4,
+        "reward_margin": 0.07500441186130047,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 12,
+      "train_loss": 0.6566923558712006,
+      "validation": {
+        "loss": 0.6532981693744659,
+        "examples": 4,
+        "reward_margin": 0.08138599619269371,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 14,
+      "train_loss": 0.6509542167186737,
+      "validation": {
+        "loss": 0.6504090428352356,
+        "examples": 4,
+        "reward_margin": 0.08742020279169083,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 16,
+      "train_loss": 0.6451552510261536,
+      "validation": {
+        "loss": 0.6478333920240402,
+        "examples": 4,
+        "reward_margin": 0.09281845390796661,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 18,
+      "train_loss": 0.6414892375469208,
+      "validation": {
+        "loss": 0.6450382322072983,
+        "examples": 4,
+        "reward_margin": 0.09869518503546715,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    },
+    {
+      "step": 20,
+      "train_loss": 0.6355165541172028,
+      "validation": {
+        "loss": 0.6409070938825607,
+        "examples": 4,
+        "reward_margin": 0.10739688947796822,
+        "reward_accuracy": 1.0,
+        "likelihood_preference_accuracy": 1.0
+      }
+    }
+  ]
+}
