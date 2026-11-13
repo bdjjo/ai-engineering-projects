@@ -1,8 +1,8 @@
 {
-  "repository": "https://github.com/bdjjo/gpt2-from-scratch",
+  "repository": "https://github.com/bdjjo/ai-engineering-projects",
   "workflow": "Tests",
   "run_id": 43368239060,
-  "run_url": "https://github.com/bdjjo/gpt2-from-scratch/actions/runs/43368239060",
+  "run_url": "https://github.com/bdjjo/ai-engineering-projects/actions/runs/43368239060",
   "tested_commit": "c93458e5496286529b1913958453518deb2b5824",
   "scope": "Initial source publication; later documentation commits have their own live workflow runs.",
   "jobs": [

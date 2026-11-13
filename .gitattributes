@@ -9,4 +9,4 @@
 *.txt text eol=lf
 *.png binary
 # Generated samples are preserved verbatim, including trailing model-produced spaces.
-reports/*/samples.txt whitespace=-blank-at-eol
+projects/*/reports/*/samples.txt whitespace=-blank-at-eol

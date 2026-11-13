@@ -1,4 +1,4 @@
-"""Build a source-only portfolio ZIP using an explicit allowlist."""
+"""Build a standalone source ZIP using an explicit allowlist."""
 
 import hashlib
 import json
@@ -9,9 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = [
     "README.md",
     "LICENSE",
-    "CONTRIBUTING.md",
-    ".gitignore",
-    ".gitattributes",
     "pyproject.toml",
     "requirements.txt",
     "requirements-dev.txt",
@@ -20,7 +17,7 @@ ROOT_FILES = [
     "generate.py",
     "evaluate.py",
 ]
-DIRECTORIES = ["src/gpt2_scratch", "scripts", "tests", "configs", "docs", "reports", ".github"]
+DIRECTORIES = ["src/gpt2_scratch", "scripts", "tests", "configs", "docs", "reports"]
 EXTENSIONS = {".py", ".md", ".txt", ".json", ".jsonl", ".csv", ".png", ".yml"}
 paths = [ROOT / name for name in ROOT_FILES]
 paths.append(ROOT / "data" / "README.md")
@@ -35,7 +32,7 @@ if any(not path.is_file() for path in paths):
     raise FileNotFoundError("a required release file is missing")
 destination = ROOT / "dist"
 destination.mkdir(exist_ok=True)
-output = destination / "gpt2-from-scratch-portfolio.zip"
+output = destination / "gpt2-from-scratch-source.zip"
 hashes = {
     path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
     for path in paths

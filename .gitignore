@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.test-tmp/
 .ruff_cache/
 .coverage
 htmlcov/
@@ -12,8 +13,10 @@ dist/
 .env.*
 !.env.example
 .local/
-data/raw/
-data/processed/
+personal/
+**/data/raw/
+**/data/processed/
+.ipynb_checkpoints/
 runs/
 *.pt
 *.pth

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "gpt2-from-scratch"
 version = "0.1.0"
-description = "An explainable GPT-style language model, byte BPE, and reproducible experiments in clean PyTorch."
+description = "A small GPT in PyTorch with byte BPE, checkpoint recovery, and held-out evaluation."
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
 license = "MIT"
