@@ -75,6 +75,15 @@ outputs on persistent storage and start a fresh run when repeating a stage.
 
 ## Data and objective
 
+For a follow-up experiment, `prepare --exclude-prompts /path/to/prior/data/test.json`
+excludes previously reviewed test prompts from every new partition. Use
+`--learning-rate` to set a training rate explicitly. DPO variants can share one SFT
+checkpoint using `--sft-run /path/to/baseline-run`; the prepared-data manifest must
+match. Select a variant using validation before running `compare`, and pass the same
+`--sft-run` there. Generation defaults to a maximum of 256 new tokens, configurable
+with `--generation-tokens`; comparison settings are saved and existing ratings are
+protected from overwrite.
+
 - Full conversation history must match between chosen and rejected responses.
 - The tokenizer's own chat template defines training and generation formatting.
 - Prompt and padding labels are masked; genuine response end tokens remain scored.

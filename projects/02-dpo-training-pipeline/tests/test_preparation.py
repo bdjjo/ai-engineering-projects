@@ -48,6 +48,12 @@ def test_prepare_separates_prompts_and_records_sources(tmp_path, monkeypatch):
         dpo_examples=4,
         eval_examples=2,
     )
+    from dpo_pipeline.data import prompt_key
+
+    excluded = prompt_key([{"role": "user", "content": "Anthropic/hh-rlhf test question 0"}])
+    prior = tmp_path / "previous-test.json"
+    prior.write_text(json.dumps([{"id": excluded}]))
+    args.exclude_prompts = str(prior)
     run.prepare(args)
     manifest = json.loads((tmp_path / "data/manifest.json").read_text())
     assert manifest["model_revision"] == "model-sha"
@@ -57,3 +63,5 @@ def test_prepare_separates_prompts_and_records_sources(tmp_path, monkeypatch):
         assert len(rows) == (4 if name in ("sft", "dpo") else 2)
         ids.extend(r["id"] for r in rows)
     assert len(ids) == len(set(ids))
+    assert excluded not in ids
+    assert manifest["excluded_prompt_ids"] == [excluded]

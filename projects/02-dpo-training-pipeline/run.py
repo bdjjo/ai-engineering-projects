@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import math
 import random
 from pathlib import Path
 
@@ -32,7 +33,10 @@ def prepare(args):
     datasets = {
         name: api.dataset_info(name).sha for name in ("teknium/OpenHermes-2.5", "Anthropic/hh-rlhf")
     }
-    all_seen = set()
+    exclusion = getattr(args, "exclude_prompts", None)
+    all_seen = (
+        {row["id"] for row in json.loads(Path(exclusion).read_text())} if exclusion else set()
+    )
     manifest = {
         "model": MODEL,
         "model_revision": revision,
@@ -40,6 +44,7 @@ def prepare(args):
         "max_length": args.max_length,
         "max_prompt": args.max_prompt,
         "counts": {},
+        "excluded_prompt_ids": sorted(all_seen),
     }
     collected = {}
     jobs = [
@@ -120,7 +125,19 @@ def main():
     parser.add_argument("--steps", type=int, default=500)
     parser.add_argument("--accumulation", type=int, default=4)
     parser.add_argument("--beta", type=float, default=0.1)
+    parser.add_argument("--learning-rate", type=float)
+    parser.add_argument("--sft-run", help="Run directory holding the shared sft/best adapter")
+    parser.add_argument(
+        "--exclude-prompts", help="Prior test JSON whose prompt IDs must be excluded"
+    )
+    parser.add_argument("--generation-tokens", type=int, default=256)
     args = parser.parse_args()
+    if args.learning_rate is not None and (
+        not math.isfinite(args.learning_rate) or args.learning_rate <= 0
+    ):
+        parser.error("learning rate must be positive and finite")
+    if args.generation_tokens <= 0:
+        parser.error("generation tokens must be positive")
     if (
         min(args.steps, args.accumulation, args.sft_examples, args.dpo_examples, args.eval_examples)
         <= 0
@@ -133,6 +150,7 @@ def main():
         raise RuntimeError("Llama training requires CUDA. Run scripts/smoke.py for the CPU check.")
     set_seed(1337)
     data, out = Path(args.data), Path(args.out)
+    sft_run = Path(args.sft_run) if args.sft_run else out
     manifest = json.loads((data / "manifest.json").read_text())
     for name, digest in manifest["files"].items():
         if hashlib.sha256((data / name).read_bytes()).hexdigest() != digest:
@@ -157,10 +175,10 @@ def main():
                 ),
             )
         else:
-            provenance = json.loads((out / "sft/provenance.json").read_text())
+            provenance = json.loads((sft_run / "sft/provenance.json").read_text())
             if provenance["data_manifest"] != manifest:
                 raise ValueError("SFT and DPO data provenance differs")
-            model = PeftModel.from_pretrained(model, out / "sft/best", is_trainable=True)
+            model = PeftModel.from_pretrained(model, sft_run / "sft/best", is_trainable=True)
         model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={"use_reentrant": False})
         fit(
             model,
@@ -169,7 +187,7 @@ def main():
             tokenizer.pad_token_id,
             out / args.stage,
             steps=args.steps,
-            lr=2e-4 if args.stage == "sft" else 5e-5,
+            lr=args.learning_rate or (2e-4 if args.stage == "sft" else 5e-5),
             accumulation=args.accumulation,
             beta=args.beta,
             dpo=args.stage == "dpo",
@@ -186,9 +204,15 @@ def main():
         )
         tokenizer.save_pretrained(out / args.stage / "best")
     else:
+        if (out / "blind-comparison.json").exists():
+            raise ValueError("comparison already exists; preserve its ratings")
         answers = {}
         for stage in ("sft", "dpo"):
-            model = PeftModel.from_pretrained(base_model(manifest), out / stage / "best")
+            stage_root = sft_run if stage == "sft" else out
+            provenance = json.loads((stage_root / stage / "provenance.json").read_text())
+            if provenance["data_manifest"] != manifest:
+                raise ValueError("comparison data differs from training provenance")
+            model = PeftModel.from_pretrained(base_model(manifest), stage_root / stage / "best")
             model.eval()
             answers[stage] = []
             for row in rows("test"):
@@ -202,7 +226,7 @@ def main():
                     result = model.generate(
                         inputs,
                         attention_mask=torch.ones_like(inputs),
-                        max_new_tokens=128,
+                        max_new_tokens=args.generation_tokens,
                         do_sample=False,
                         pad_token_id=tokenizer.pad_token_id,
                     )
@@ -229,6 +253,15 @@ def main():
             key[row["id"]] = order
         write(out / "blind-comparison.json", blinded)
         write(out / "comparison-key.json", key)
+        write(
+            out / "comparison-settings.json",
+            {
+                "generation_tokens": args.generation_tokens,
+                "do_sample": False,
+                "sft_run": str(sft_run),
+                "data_manifest": manifest,
+            },
+        )
         print("Rate A/B/tie in blind-comparison.json before opening comparison-key.json.")
 
 
