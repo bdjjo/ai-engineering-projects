@@ -4,9 +4,40 @@ A two-stage LoRA training pipeline for `meta-llama/Llama-3.2-1B-Instruct`.
 Supervised fine-tuning learns from OpenHermes demonstrations; a custom PyTorch DPO
 objective then learns from Anthropic HH-RLHF preference pairs.
 
-**Status:** CPU checks pass, and the owner completed a small 1B Colab GPU pilot.
-The pilot did not demonstrate better generated responses from DPO. A larger experiment
-and independent human evaluation remain pending.
+**Status:** CPU checks pass. A Colab pilot and a follow-up comparison of two DPO
+learning rates are complete. The pilot did not demonstrate better generated responses
+from DPO. Follow-up response evaluation is incomplete; no follow-up win rate is reported.
+
+## Follow-up experiment
+
+The follow-up used 512 SFT training examples, 256 DPO training pairs, 64 validation
+examples per stage, and 64 reserved test prompts. The eight previously reviewed pilot
+prompts were excluded from all new partitions. Both DPO runs used the same prepared
+data, SFT baseline, seed 1337, beta 0.1, and four accumulated microsteps per update.
+
+SFT ran for 100 updates at learning rate 2e-4. Validation loss fell from 1.52079 to
+a best value of 1.05374 at update 60; the final value was 1.06024. Both DPO variants
+started from that best SFT adapter and ran for 50 updates on a Tesla T4.
+
+| DPO learning rate | Best update | Validation loss | Reward margin | Reward accuracy |
+|---|---:|---:|---:|---:|
+| 5e-5 | 50 | 0.686129 | 0.092001 | 57.81% |
+| 1e-5 | 40 | 0.688696 | 0.013818 | 54.69% |
+
+The 5e-5 checkpoint was selected by minimum validation loss before test generation.
+The difference is small and comes from one seed and 64 validation pairs. Reward
+accuracy measures positive DPO margins, not human preference for generated answers.
+
+Generation produced 64 blinded SFT/DPO response pairs with greedy decoding and a
+256-new-token limit. **Only 1 of 64 pairs has been rated**, with AI assistance.
+Evaluation is paused; there is no aggregate follow-up win rate or demonstrated
+response-quality improvement. Pilot and follow-up losses use different validation
+sets and should not be compared directly.
+
+[Follow-up results](reports/colab-followup.json) preserve the owner-reported metrics,
+settings, source revision, and evidence limitations. Original Drive artifacts have
+not been independently inspected. These settings reproduce the workflow; exact
+numbers require the original prepared data and may vary across software and hardware.
 
 ## Colab pilot
 
