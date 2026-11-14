@@ -9,7 +9,7 @@ measured results. Each project has its own setup instructions and dependencies.
 | Project | What it covers | Results |
 |---|---|---|
 | [01 · GPT-2 from scratch](projects/01-gpt2-from-scratch) | A small GPT in PyTorch, character and byte BPE tokenizers, training, checkpoint recovery, and generation | [Two CPU experiments and held-out evaluation](projects/01-gpt2-from-scratch/docs/RESULTS.md) |
-| [02 · SFT and DPO](projects/02-dpo-training-pipeline) | LoRA fine-tuning, a custom DPO loss, and blinded preference evaluation | CPU engineering check complete; GPU experiment pending |
+| [02 · SFT and DPO](projects/02-dpo-training-pipeline) | LoRA fine-tuning, a custom DPO loss, and blinded preference evaluation | CPU checks and a small Colab pilot; no DPO quality improvement demonstrated |
 
 ## Get started
 

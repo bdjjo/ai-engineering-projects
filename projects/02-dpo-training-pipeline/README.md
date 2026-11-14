@@ -4,9 +4,26 @@ A two-stage LoRA training pipeline for `meta-llama/Llama-3.2-1B-Instruct`.
 Supervised fine-tuning learns from OpenHermes demonstrations; a custom PyTorch DPO
 objective then learns from Anthropic HH-RLHF preference pairs.
 
-**Status:** the CPU engineering check and mathematical tests run locally. The full
-1B GPU experiment and human-rated win rate are pending. No improvement in helpfulness
-or safety is claimed from the synthetic test.
+**Status:** CPU checks pass, and the owner completed a small 1B Colab GPU pilot.
+The pilot did not demonstrate better generated responses from DPO. A larger experiment
+and independent human evaluation remain pending.
+
+## Colab pilot
+
+The owner reported 10 updates per stage on a Tesla T4. SFT validation loss fell from
+0.9134 to 0.8672. DPO reached its best validation loss at step 1 (0.6713 versus the
+initial 0.6931), then worsened to 0.7236 at step 10. The comparison code selects the
+best adapter, rather than the final adapter.
+
+Eight blinded comparisons yielded **0 DPO wins, 2 SFT wins, and 6 ties**: a tie-adjusted
+DPO win rate of **37.5%**, with a prompt-bootstrap interval of **18.75–50.0%**.
+Ratings were suggested by an AI assistant and saved by the owner; this is not an
+independent human evaluation. Several responses were identical or truncated, and some
+refusals were inappropriate to the prompt. These results do not establish a general
+advantage for either model or a broad safety improvement.
+
+[Pilot results](reports/colab-pilot.json) record the supplied measurements and their
+limitations. Original GPU artifacts have not yet been independently inspected.
 
 ## Setup
 

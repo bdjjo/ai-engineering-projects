@@ -1,0 +1,25 @@
+{
+  "evidence_source": "Results supplied by the repository owner from the Colab notebook; original GPU artifacts have not been independently inspected",
+  "run_name": "first-pilot",
+  "environment_reported": {"python": "3.13.16", "pytorch": "2.14.1+cu130", "gpu": "Tesla T4"},
+  "sft": {"updates": 10, "initial_validation_loss": 0.9134, "final_validation_loss": 0.8672},
+  "dpo": {"updates": 10, "initial_validation_loss": 0.6931, "best_validation_step": 1, "best_validation_loss": 0.6713, "final_validation_loss": 0.7236, "final_reward_margin": -0.0385, "final_reward_accuracy": 0.5},
+  "generated_response_evaluation": {
+    "examples": 8,
+    "dpo_wins": 0,
+    "sft_wins": 2,
+    "ties": 6,
+    "tie_adjusted_dpo_win_rate": 0.375,
+    "bootstrap_95_percent_interval": [0.1875, 0.5],
+    "rating_process": "Model identities hidden during comparison; AI suggested ratings and reasons which the owner saved. Not independent human evaluation.",
+    "note": "Prompt bootstrap; does not capture rater bias or disagreement."
+  },
+  "limitations": [
+    "Eight comparisons and one training seed do not support a broad alignment claim.",
+    "Several displayed responses were identical and several ended mid-sentence at the generation limit.",
+    "Some responses refused benign requests or introduced unsupported harmful-content allegations.",
+    "Validation selected step 1; final-step metrics describe a different checkpoint.",
+    "Original dataset manifest, adapter provenance, ratings file, and comparison mapping still need archival verification."
+  ],
+  "conclusion": "This pilot did not demonstrate improved generated-response quality from DPO."
+}
