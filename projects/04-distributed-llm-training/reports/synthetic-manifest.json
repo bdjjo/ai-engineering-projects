@@ -1,0 +1,12 @@
+{
+  "source": "Synthetic modular token sequences; systems validation only",
+  "seed": 1337,
+  "vocab_size": 128,
+  "dtype": "little-endian uint16",
+  "train_tokens": 16385,
+  "validation_tokens": 4097,
+  "sha256": {
+    "train": "f33093c3f0f4f9c07cd94c766dfba27993f9a7b57ddf4d7faecbcf5d0faef6fc",
+    "validation": "795ad9f5518eeac93fc4700b6733a32b62de7e35135cdf50ff5e68d58ee47bcc"
+  }
+}

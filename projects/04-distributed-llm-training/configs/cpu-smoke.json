@@ -1,0 +1,6 @@
+{
+  "model": {"vocab_size": 128, "block_size": 32, "n_layer": 2, "n_head": 4, "n_embd": 64},
+  "train": {"steps": 20, "batch_size": 2, "accumulation": 2, "learning_rate": 0.001,
+    "warmup_steps": 2, "measure_after": 3, "save_every": 10, "log_every": 5,
+    "activation_checkpointing": true, "precision": "fp32", "seed": 1337}
+}

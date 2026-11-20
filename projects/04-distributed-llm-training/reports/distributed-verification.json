@@ -1,0 +1,8 @@
+{
+  "single_vs_ddp_max_absolute_tensor_difference": 2.766028046607971e-07,
+  "ddp_resume_max_absolute_tensor_difference": 0.0,
+  "global_tokens_per_step": 128,
+  "scope": "CPU FP32, two Gloo ranks, equal global batch; model AND AdamW state compared",
+  "multi_gpu_fsdp_verified": false,
+  "passed": true
+}

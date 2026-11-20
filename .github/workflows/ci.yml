@@ -31,6 +31,12 @@ jobs:
           - os: windows-latest
             python: '3.12'
             project: 03-mechanistic-interpretability
+          - os: ubuntu-latest
+            python: '3.12'
+            project: 04-distributed-llm-training
+          - os: windows-latest
+            python: '3.12'
+            project: 04-distributed-llm-training
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     defaults:
@@ -59,3 +65,6 @@ jobs:
       - name: Exercise SFT and DPO adapter training
         if: matrix.project == '02-dpo-training-pipeline'
         run: python scripts/smoke.py
+      - name: Verify two-process DDP and distributed checkpoint recovery
+        if: matrix.project == '04-distributed-llm-training'
+        run: python scripts/verify_distributed.py

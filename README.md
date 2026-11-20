@@ -11,6 +11,7 @@ measured results. Each project has its own setup instructions and dependencies.
 | [01 · GPT-2 from scratch](projects/01-gpt2-from-scratch) | A small GPT in PyTorch, character and byte BPE tokenizers, training, checkpoint recovery, and generation | [Two CPU experiments and held-out evaluation](projects/01-gpt2-from-scratch/docs/RESULTS.md) |
 | [02 · SFT and DPO](projects/02-dpo-training-pipeline) | LoRA fine-tuning, a custom DPO loss, and blinded preference evaluation | Two DPO learning rates compared on a T4; 64 response pairs generated, evaluation incomplete |
 | [03 · Mechanistic interpretability](projects/03-mechanistic-interpretability) | GPT-2 IOI head interventions, sparse autoencoders, and a feature browser | [16-prompt head sweep and four measured CPU SAE runs](projects/03-mechanistic-interpretability/docs/RESULTS.md) |
+| [04 · Distributed GPT training](projects/04-distributed-llm-training) | FSDP/DDP, AMP, activation checkpointing, async recovery, profiling, and MFU accounting | [CPU training and exact two-rank recovery](projects/04-distributed-llm-training/docs/RESULTS.md); GPU experiments pending |
 
 ## Get started
 
@@ -34,6 +35,7 @@ projects/
   01-gpt2-from-scratch/
   02-dpo-training-pipeline/
   03-mechanistic-interpretability/
+  04-distributed-llm-training/
 .github/workflows/          Automated checks
 ```
 
