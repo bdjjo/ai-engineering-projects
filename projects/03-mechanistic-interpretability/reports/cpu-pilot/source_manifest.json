@@ -1,0 +1,29 @@
+{
+  "algorithm": "SHA-256 of UTF-8 text with LF line endings",
+  "files": {
+    "app.py": "220e72db6619bfed350b2514a79b3d0deb8135cb3c43cdf2f1e3cd41a9be6bf4",
+    "collect_activations.py": "1de7fc1df3edc102b619c03218ab08ec1846109cde01fcfe85bbc4956ec0723e",
+    "configs/cpu-pilot.json": "7b01dd9cac00498f6c154e51c6e3288999a7ace7bf77832965954af75c8675cf",
+    "configs/cpu-reference.json": "d3aa9e18dee6bef47ecb5551d42a5041290a3da1d622c1a8d656b08f139abd2a",
+    "configs/cpu-sparse-5.json": "ee2d24ed9e9eaec938617deb96c53fdba3cff12cb6907efa5d43050d3f2d6953",
+    "configs/cpu-sparse.json": "8aeb15fcb3163e639d47cdf1bade01e5355d7824ebbda6edeebbe2bf0622f3d0",
+    "configs/gpu.json": "52065a453284fce602a44febdc4613b58a187c5be5d9af749db28f1388d9ef6b",
+    "export_features.py": "507596979cb5f9266056b84224fa023a90ae9230014568059281d7959e17ee33",
+    "pyproject.toml": "8229bccfd2a5c5bb55ee1ae2f11162b5cbf187e5d5fddeb26527977aafa5077e",
+    "requirements.txt": "edaaeb087992c15fba9eefb9250e56e836ae48cd35ad91581ae0620c94d655f2",
+    "run_ioi.py": "6880a5d5d73148d7e2408d8956f55e406c92c65957048000e39c44818634ab80",
+    "scripts/deploy_space.py": "e168f59f13709edd1c6f223bd556e6bcf6179e9ac4dea42694858702153c9901",
+    "scripts/export_report.py": "a736447497ae4152dd614a21c69131bd551338618ceb1c7a57b54b4608d8126f",
+    "scripts/package_space.py": "c322cbd3e2037f616d9d7983e49be56de23aea37a8712c0811faff019e08b422",
+    "scripts/plot_training.py": "de67320e2cfcdf69f557727852981d54485ed36eb19a515470cb5c22219d7f1d",
+    "src/mech_interp/__init__.py": "bca9ad9308cd1588743e11470b09e28c5e48e75672c321efc44d74d517b6ad14",
+    "src/mech_interp/activation_collector.py": "24c2e9d382b964c21c5e548105ff1b526581a4322586fb65457b12f370df1c20",
+    "src/mech_interp/feature_browser.py": "605c4611ed686121fc97d9a1ff522cdfae172a3e73938147227058547af32d51",
+    "src/mech_interp/features.py": "240122f3ab7d67345cbfc133e1fadb2f0538ec5c9c071d435f8fd645ef6b6dc9",
+    "src/mech_interp/ioi_circuit.py": "d39116503ed129eb3d88a87c86f93ed3258982a47c0d596046a16d7c07ad93ea",
+    "src/mech_interp/runtime.py": "d08157359a8d14fe819f3be12738c492ef317c226ebecdb45f774367e9d6678a",
+    "src/mech_interp/sparse_autoencoder.py": "038cbf637920c8b0a4699eb6deb874403b62457e76bbe85df42ca2da68f60486",
+    "src/mech_interp/training.py": "1ad3a1a387d530c57ad27c28a23b75f539b3bd4e340b6b89746068e3bc81439a",
+    "train_sae.py": "9a6be18755d076252c6fc588472651944d875ac315706cd1e4aacfd2a833e25e"
+  }
+}

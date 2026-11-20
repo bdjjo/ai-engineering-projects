@@ -25,7 +25,7 @@ provenance, evaluation protocol, and unedited outputs needed to assess the resul
 ## Adding a project
 
 The collection is planned for 12 projects on `main`. Use the next numbered directory,
-starting with `projects/02-short-name/`; keep existing paths stable.
+using `projects/NN-short-name/`; keep existing paths stable.
 
 Each project should contain:
 

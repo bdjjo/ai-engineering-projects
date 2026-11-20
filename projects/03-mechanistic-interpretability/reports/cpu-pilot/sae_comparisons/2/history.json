@@ -1,0 +1,153 @@
+[
+  {
+    "step": 0,
+    "validation": {
+      "mse_per_dimension": 1.0884634455045064,
+      "l1_per_token": 480.61717987060547,
+      "l0": 510.72607421875,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.2253009246925224,
+      "tokens": 2048
+    }
+  },
+  {
+    "step": 50,
+    "train_batch_loss": 724.650146484375,
+    "validation": {
+      "mse_per_dimension": 0.5493942449490229,
+      "l1_per_token": 401.99231338500977,
+      "l0": 494.3544921875,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6089761072830665,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 2.016489600064233
+  },
+  {
+    "step": 100,
+    "train_batch_loss": 610.14892578125,
+    "validation": {
+      "mse_per_dimension": 0.48388244211673737,
+      "l1_per_token": 353.6808433532715,
+      "l0": 470.7919921875,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6556032432567268,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 3.623787200078368
+  },
+  {
+    "step": 150,
+    "train_batch_loss": 549.6536254882812,
+    "validation": {
+      "mse_per_dimension": 0.4645858456691106,
+      "l1_per_token": 314.6571846008301,
+      "l0": 442.2216796875,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6693373337181929,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 6.583885900094174
+  },
+  {
+    "step": 200,
+    "train_batch_loss": 539.2671508789062,
+    "validation": {
+      "mse_per_dimension": 0.4610871225595474,
+      "l1_per_token": 288.3793144226074,
+      "l0": 416.80517578125,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.671827502376525,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 10.195950900088064
+  },
+  {
+    "step": 250,
+    "train_batch_loss": 475.902099609375,
+    "validation": {
+      "mse_per_dimension": 0.46085431675116223,
+      "l1_per_token": 270.01311111450195,
+      "l0": 396.2314453125,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6719931987489913,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 14.151703800074756
+  },
+  {
+    "step": 300,
+    "train_batch_loss": 476.0736083984375,
+    "validation": {
+      "mse_per_dimension": 0.457635631163915,
+      "l1_per_token": 261.2631301879883,
+      "l0": 384.05517578125,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6742840545039039,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 17.107764100073837
+  },
+  {
+    "step": 350,
+    "train_batch_loss": 450.4330139160156,
+    "validation": {
+      "mse_per_dimension": 0.45839929580688477,
+      "l1_per_token": 253.32282257080078,
+      "l0": 372.9599609375,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6737405265653249,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 19.198392200050876
+  },
+  {
+    "step": 400,
+    "train_batch_loss": 430.4879150390625,
+    "validation": {
+      "mse_per_dimension": 0.4604610353708267,
+      "l1_per_token": 246.25765991210938,
+      "l0": 362.791015625,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6722731114304322,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 21.21181340003386
+  },
+  {
+    "step": 450,
+    "train_batch_loss": 412.0670166015625,
+    "validation": {
+      "mse_per_dimension": 0.45940131942431134,
+      "l1_per_token": 241.9941520690918,
+      "l0": 354.78173828125,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6730273498637436,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 23.024681300041266
+  },
+  {
+    "step": 500,
+    "train_batch_loss": 421.7276306152344,
+    "validation": {
+      "mse_per_dimension": 0.46052707731723785,
+      "l1_per_token": 236.25540924072266,
+      "l0": 346.1767578125,
+      "inactive_fraction": 0.0,
+      "variance_explained": 0.6722261069719659,
+      "tokens": 2048
+    },
+    "inactive_in_train_window": 0.0,
+    "elapsed_seconds": 25.543720100075006
+  }
+]

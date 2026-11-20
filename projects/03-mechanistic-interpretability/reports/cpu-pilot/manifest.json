@@ -1,0 +1,10 @@
+{
+  "description": "Measured GPT-2 IOI sweep and CPU SAE comparison",
+  "ioi_prompts": 16,
+  "sae_runs": 4,
+  "selection": "Exploratory validation-guided choice of moderate L1, then longer training",
+  "independent_test_evaluation": false,
+  "probe_corpus": "examples/browser_corpus.json; original AI-assisted paragraphs",
+  "deployment_target": "bdjjo/gpt2-feature-explorer",
+  "space_deployment_status": "Packaged; authenticated publication not yet verified"
+}

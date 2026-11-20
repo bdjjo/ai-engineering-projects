@@ -1,0 +1,9 @@
+{
+  "hidden_dim": 1024,
+  "l1_coefficient": 1.0,
+  "lr": 0.0003,
+  "batch_size": 128,
+  "steps": 3000,
+  "eval_every": 250,
+  "seed": 1337
+}

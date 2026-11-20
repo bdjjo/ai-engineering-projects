@@ -1,0 +1,19 @@
+{
+  "project_tests": 15,
+  "project_1_regression_tests": 37,
+  "project_2_regression_tests": 15,
+  "ruff_check": "passed",
+  "ruff_format": "passed",
+  "pip_check": "passed",
+  "live_browser_http": 200,
+  "browser_features_tested": [
+    0,
+    100
+  ],
+  "invalid_feature_rejected": true,
+  "browser_visual_check": "passed",
+  "notebook_default_code_cells_executed": 9,
+  "notebook_training_branch": "Not executed via Jupyter; underlying commands executed separately",
+  "cuda_and_colab_drive": "Not executed",
+  "space_publication": "Pending authenticated deployment"
+}

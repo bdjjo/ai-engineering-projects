@@ -25,6 +25,12 @@ jobs:
           - os: ubuntu-latest
             python: '3.12'
             project: 02-dpo-training-pipeline
+          - os: ubuntu-latest
+            python: '3.12'
+            project: 03-mechanistic-interpretability
+          - os: windows-latest
+            python: '3.12'
+            project: 03-mechanistic-interpretability
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     defaults:
