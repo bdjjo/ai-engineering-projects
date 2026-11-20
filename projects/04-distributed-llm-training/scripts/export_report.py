@@ -2,7 +2,6 @@
 
 import argparse
 import json
-import shutil
 from pathlib import Path
 
 import matplotlib
@@ -40,7 +39,10 @@ def export(source, destination):
     fig.savefig(destination / "training.png", dpi=150)
     plt.close(fig)
     if (source / "profiler.txt").exists():
-        shutil.copyfile(source / "profiler.txt", destination / "profiler.txt")
+        lines = (source / "profiler.txt").read_text(encoding="utf-8").splitlines()
+        (destination / "profiler.txt").write_text(
+            "\n".join(line.rstrip() for line in lines) + "\n", encoding="utf-8"
+        )
     return payload["summary"]
 
 
