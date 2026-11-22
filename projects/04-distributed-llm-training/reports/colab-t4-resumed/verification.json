@@ -1,0 +1,8 @@
+{
+  "source_file_sha256": "2cdfa30bc7f4b49e96f38993f7fd25377a8416fc75f632b3fbf9ebc1a41c8967",
+  "origin": "User-supplied Colab export, received 2026-11-22; execution date not embedded",
+  "source_hashes_match": true,
+  "data_hashes_match_wikitext_manifest": true,
+  "parameter_flop_and_metric_recalculation_passed": true,
+  "scope": "Resumed attempts 11-20 only; no uninterrupted GPU comparison supplied"
+}

@@ -2,9 +2,14 @@
 
 import argparse
 import json
+import os
 from pathlib import Path
 
-import matplotlib
+# Colab's inherited inline backend may be unavailable in the training environment.
+# Select the file renderer before Matplotlib reads MPLBACKEND during import.
+os.environ["MPLBACKEND"] = "Agg"
+
+import matplotlib  # noqa: E402
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402

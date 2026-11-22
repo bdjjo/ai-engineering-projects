@@ -5,9 +5,10 @@ checkpointing, mixed precision, recoverable asynchronous checkpoints, and explic
 throughput/MFU accounting. FSDP `FULL_SHARD` shards parameters, gradients, and AdamW
 state (the ZeRO-3 style of sharding); this project does not use DeepSpeed.
 
-**Measured so far:** CPU training, real two-rank Gloo/DDP, exact distributed
-checkpoint recovery, and a CPU profiler trace. **Pending:** the one-GPU Colab pilot,
-multi-GPU FSDP validation, and the 1.313B-parameter run. See [results](docs/RESULTS.md).
+**Measured so far:** CPU training, real two-rank Gloo/DDP, exact CPU distributed
+checkpoint recovery, a CPU profiler trace, and a resumed 124M T4/FP16 pilot at
+3,901 timed tokens/s and 4.62% estimated MFU. **Pending:** exact GPU recovery
+comparison, multi-GPU FSDP validation, and the 1.313B run. See [results](docs/RESULTS.md).
 
 ![Measured CPU training](reports/cpu-ddp/training.png)
 

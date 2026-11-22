@@ -1,9 +1,45 @@
 # Measured results
 
-Recorded on 20 November 2026 using PyTorch 2.7.1+cpu and Python 3.12.14 on Windows.
+CPU experiments recorded on 20 November 2026 using PyTorch 2.7.1+cpu and Python 3.12.14 on Windows.
 The committed JSON contains the complete configurations, source/data SHA256 hashes,
 and individual update measurements. These are short correctness experiments on
-synthetic modular token sequences, not natural-language quality benchmarks.
+synthetic modular token sequences. The separate Colab pilot below uses WikiText;
+neither experiment is a language-quality benchmark.
+
+## Colab T4 pilot: resumed attempts 11–20
+
+The user supplied this Colab export on 22 November 2026; the artifact does not
+embed an execution date. It records Python 3.12.3, PyTorch 2.7.1+cu126, a Tesla T4,
+FP16, activation checkpointing, and 123,767,040 parameters. Context is 256,
+microbatch is 1, accumulation is 4, and world size is 1: 1,024 tokens per attempt.
+
+| Measurement | Recorded value |
+|---|---:|
+| Resumed segment | Attempts 11–20 |
+| Validation loss at resume / end | 8.575815 / 8.209408 |
+| Timed global tokens/s | 3,901.00 |
+| Estimated MFU, dense T4 peak 65 TFLOP/s | 4.6196% |
+| Loop-wall tokens/s, including checkpoint work | 915.37 |
+| Peak allocated / reserved GPU memory (decimal GB) | 2.415 / 2.852 |
+| Skipped optimizer attempts | 0 |
+| Checkpoint staging / join seconds | 1.181 / 7.212 |
+
+The segment processed 10,240 tokens in 2.625 timed seconds; its loop wall time was
+11.187 seconds. Checkpoint staging plus waiting occupied 8.393 seconds, making
+checkpoint overhead prominent in this short pilot. The exported segment includes
+its first resumed attempt and is not a repeated steady-state throughput benchmark.
+Validation covers four batches, not the entire validation file.
+
+The [unaltered user export](../reports/colab-t4-resumed/results.json) passed
+[local arithmetic and provenance checks](../reports/colab-t4-resumed/verification.json):
+source hashes match the implementation, token-file hashes match the recorded
+WikiText preparation, and parameter count, FLOPs, per-step metrics and aggregate
+metrics recompute correctly. Checkpoint tensors and the first ten steps' report
+were not supplied. Successful continuation is evidenced; exact GPU recovery
+equivalence to an uninterrupted run is not established. This is single-GPU
+training, with no cross-rank parameter sharding.
+
+![Measured Colab resumed segment](../reports/colab-t4-resumed/training.png)
 
 ## Training and recovery
 
@@ -55,7 +91,7 @@ The profile's throughput is not used as the baseline benchmark.
 
 ## Validation status
 
-Local suite: **24 passed, 2 skipped**. The skipped tests require CUDA and, for one
+Local suite: **25 passed, 2 skipped**. The skipped tests require CUDA and, for one
 test, Linux with two GPUs. The suite covers causality, tied parameter accounting,
 gradient accumulation, activation recomputation with dropout, rank batch separation,
 data preparation, learning-rate endpoints, MFU units/aggregation, snapshot isolation,
@@ -67,12 +103,11 @@ validation tokens with the GPT-2 tokenizer. Dataset revision
 `b08601e04326c79dfdd32d625aee71d232d685c3` and tokenizer revision
 `607a30d783dfa663caf39e06633721c8d4cfcd7e` are recorded in the
 [preparation manifest](../reports/wikitext-preparation.json). This validates
-tokenization/provenance; these tokens have not yet been used for a GPU run.
+tokenization/provenance; the Colab export has matching token-file hashes.
 
 ## What has not been measured
 
-- The 123,767,040-parameter, one-GPU Colab pilot: prepared for execution.
-- Mixed-precision GPU throughput, GPU MFU, and GPU peak memory.
+- Exact GPU recovery equivalence against an uninterrupted reference run.
 - Multi-GPU FSDP, sharded CUDA optimizer recovery, and communication profiling.
 - The 1,313,183,744-parameter preset or its configured 5,000-attempt schedule.
 - Scaling, checkpoint speedups against synchronous saves, or language quality.
