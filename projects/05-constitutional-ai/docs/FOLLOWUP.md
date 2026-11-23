@@ -64,3 +64,26 @@ together. The additional cases were written after examining the earlier failures
 they are fresh examples, not independent or blinded evaluation. No measured result
 is claimed for the redesign. Inspect explanations and both raw decisions before
 collecting further training labels.
+
+## Formatting repair and stronger-model comparison
+
+The first structured run returned 0/12 accepted correct decisions: all 24 outputs
+were JSON wrapped in Markdown fences and were rejected by the original parser.
+The repaired parser accepts one complete fenced JSON block, while rejecting prose,
+multiple blocks, missing fields, invalid decisions, and empty explanations.
+Parser-only rescoring of the saved outputs yields **2/12 correct**. No model was
+rerun to obtain that figure. The original and rescored reports remain separately
+available under `reports/judge-calibration-structured/`.
+
+Formatting repair does not resolve the incorrect judgments. Compare a larger
+checkpoint with the same structured prompt, cases, and generation budget:
+
+```bash
+python scripts/calibrate_judge.py --mode structured --device cuda --judge-model Qwen/Qwen2.5-3B-Instruct --out outputs/judge-3b-01
+```
+
+The exact model revision is resolved and saved in the report. This is an unrun
+research diagnostic; GPU memory/runtime and improved judging are unverified.
+The 3B checkpoint has its own Qwen research license; consult its model card.
+Keep training disabled and review raw outputs before proceeding. The same-family
+comparison and development cases do not constitute independent safety validation.

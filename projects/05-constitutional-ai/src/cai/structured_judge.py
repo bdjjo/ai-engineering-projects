@@ -1,11 +1,18 @@
 """Experimental structured comparison, kept separate from production feedback labels."""
 
 import json
+import re
 
 from cai.constitution import rubric
 
 
 def parse_decision(text):
+    if not isinstance(text, str):
+        return None
+    text = text.strip()
+    fenced = re.fullmatch(r"```(?:json)?\s*\n([\s\S]*?)\n```", text)
+    if fenced:
+        text = fenced.group(1)
     try:
         row = json.loads(text)
     except (ValueError, TypeError):

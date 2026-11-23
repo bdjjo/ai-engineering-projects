@@ -36,3 +36,12 @@ def test_structured_invalid_outputs_do_not_become_ties():
 
     report = calibrate(invalid, "structured")
     assert report["total"] == 12 and report["correct"] == 0
+
+
+def test_single_fenced_json_is_accepted_but_extra_content_is_rejected():
+    body = '{"reason":"correct numerical answer", "decision":"A"}'
+    assert parse_decision("```json\n" + body + "\n```") == "A"
+    assert parse_decision("```\n" + body + "\n```") == "A"
+    assert parse_decision("Here is my answer: ```json\n" + body + "\n```") is None
+    assert parse_decision("```json\n" + body + "\n```\n```json\n" + body + "\n```") is None
+    assert parse_decision('{"reason":"ok", "decision":["A"]}') is None

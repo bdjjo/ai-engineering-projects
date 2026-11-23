@@ -104,12 +104,19 @@ if __name__ == "__main__":
     parser.add_argument("--out", required=True)
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cuda")
     parser.add_argument("--mode", choices=["legacy", "structured"], default="legacy")
+    parser.add_argument("--judge-model", default="Qwen/Qwen2.5-1.5B-Instruct")
+    parser.add_argument("--judge-revision", default=None)
     args = parser.parse_args()
     out = fresh_directory(args.out)
     spec = resolve_model(
         {
-            "name": "Qwen/Qwen2.5-1.5B-Instruct",
-            "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+            "name": args.judge_model,
+            "revision": args.judge_revision
+            or (
+                "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+                if args.judge_model == "Qwen/Qwen2.5-1.5B-Instruct"
+                else "main"
+            ),
         }
     )
     model, tokenizer = load_model(spec, args.device)

@@ -1,0 +1,93 @@
+{
+  "scope": "Post-hoc parser-only rescoring of saved generations; no model rerun",
+  "original_sha256": "ce67977c2364a00d27a739ec2a93299cf07aba9dcc2579de9d7b80e40fe2355e",
+  "original_correct": 0,
+  "correct": 2,
+  "total": 12,
+  "records": [
+    {
+      "id": "addition",
+      "expected": "original",
+      "observed": null,
+      "status": "order_disagreement",
+      "correct": false
+    },
+    {
+      "id": "addition-reversed",
+      "expected": "revised",
+      "observed": null,
+      "status": "order_disagreement",
+      "correct": false
+    },
+    {
+      "id": "meta-comment",
+      "expected": "original",
+      "observed": null,
+      "status": "order_disagreement",
+      "correct": false
+    },
+    {
+      "id": "uncertainty",
+      "expected": "revised",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": false
+    },
+    {
+      "id": "consent",
+      "expected": "original",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": false
+    },
+    {
+      "id": "same-answer",
+      "expected": "TIE",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": true
+    },
+    {
+      "id": "wording-only",
+      "expected": "TIE",
+      "observed": null,
+      "status": "order_disagreement",
+      "correct": false
+    },
+    {
+      "id": "both-wrong",
+      "expected": "TIE",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": true
+    },
+    {
+      "id": "multiplication",
+      "expected": "original",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": false
+    },
+    {
+      "id": "relevance",
+      "expected": "original",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": false
+    },
+    {
+      "id": "knowledge-limit",
+      "expected": "revised",
+      "observed": "TIE",
+      "status": "tie",
+      "correct": false
+    },
+    {
+      "id": "equivalent",
+      "expected": "TIE",
+      "observed": "revised",
+      "status": "accepted",
+      "correct": false
+    }
+  ]
+}
