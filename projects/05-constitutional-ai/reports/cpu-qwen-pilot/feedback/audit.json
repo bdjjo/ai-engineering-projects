@@ -1,0 +1,15 @@
+{
+  "total": 6,
+  "statuses": {
+    "accepted": 1,
+    "truncated_generation": 3,
+    "order_disagreement": 1,
+    "identical": 1
+  },
+  "accepted_by_split": {
+    "train": 1
+  },
+  "winner_counts": {
+    "original": 1
+  }
+}

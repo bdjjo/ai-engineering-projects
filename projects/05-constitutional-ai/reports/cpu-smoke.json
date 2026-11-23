@@ -1,0 +1,1599 @@
+{
+  "scope": "Synthetic CPU integration test; random model and scripted feedback, not safety evidence",
+  "provenance": {
+    "created_utc": "2026-11-23T07:36:50.718465+00:00",
+    "git_commit_at_start": "da81f18f66b324577f31d99a03fafbaf54ca3ba5",
+    "source_hashes": {
+      "run_cai.py": "54e177428e9abd8adf026af3a374d8de46bb75ce04d19e4cafa54cd6409e2a98",
+      "pyproject.toml": "223bcb98ba27c541c093305e512b39a45450593c640e97196d3eb929c5e8df83",
+      "src/cai/__init__.py": "0a09b8c441dd226f46a2fb00f0b43831ef5dd468010bd46f02172008c8dafae6",
+      "src/cai/constitution.py": "341a45ba5718ae90bf84dbf268604d70315bfa0d242b35daedddc9e37f0368c6",
+      "src/cai/data.py": "02b7b65f5ed1fe791dc3a8a85c699a8f4d926a4676fae49beab91be9d63feeee",
+      "src/cai/evaluation.py": "770634491fc38c2d585820d9c8c339c504530fe6f3a683af3f35754d60d08112",
+      "src/cai/feedback.py": "ead730f501cc7ddeb64fd82c794270db1356831b03a14eead2c1b33b11c256c2",
+      "src/cai/io.py": "3655f0a071b4f3504f6b5d4cf03dc8478649b953001726fe08eecf0cc56a9a28",
+      "src/cai/modeling.py": "cb6719fd4702406db6eac86514ac7b4870516a2bd287ea0afa43efaee4e839f3",
+      "src/cai/pipeline.py": "6fd9f5fed7cbd7fbeda24bfddf7bd4ba3188239b73a9e9d5aa80335e3ce27c76",
+      "src/cai/policy.py": "306ef5de55eb90faf597597a115aeaafabe8a8c62431a41890f06e80fe9b7a2c",
+      "src/cai/reward.py": "158f8d33eabe72f7151405948f8b60459e7235bd3cb1c9c80043f9b614e1ff9d"
+    },
+    "config": {
+      "seed": 1337,
+      "max_length": 64,
+      "max_context": 128,
+      "rollout_tokens": 5,
+      "reward_steps": 80,
+      "reward_lr": 0.03,
+      "sft_steps": 30,
+      "sft_lr": 0.03,
+      "rl_steps": 10,
+      "rl_lr": 0.001,
+      "kl_coef": 0.05,
+      "batch_size": 2,
+      "eval_every": 10
+    },
+    "data_sha256": "f13debdc01bf6cc3187a941e5c427d6436a86d38051716e0fe7468f0d4ee5637",
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "torch": "2.7.1+cpu",
+      "transformers": "4.51.3",
+      "peft": "0.15.2",
+      "accelerate": "1.6.0"
+    }
+  },
+  "feedback": {
+    "total": 9,
+    "statuses": {
+      "accepted": 9
+    },
+    "accepted_by_split": {
+      "train": 6,
+      "validation": 3
+    },
+    "winner_counts": {
+      "revised": 9
+    }
+  },
+  "reward": {
+    "backbone": {
+      "name": "random-tiny-llama",
+      "revision": "synthetic"
+    },
+    "frozen_backbone": true,
+    "selected_step": 80,
+    "normalization": {
+      "mean": 1.923654556274414,
+      "std": 2.1763100624084473
+    },
+    "history": [
+      {
+        "step": 0,
+        "train": {
+          "loss": 0.7069793343544006,
+          "accuracy": 0.0,
+          "ties": 0,
+          "margin": -0.027475446462631226,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.7073032855987549,
+          "accuracy": 0.0,
+          "ties": 0,
+          "margin": -0.028114577755331993,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 1,
+        "train": {
+          "loss": 0.6588366031646729,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.06984058767557144,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.6589887738227844,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.06952498108148575,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 2,
+        "train": {
+          "loss": 0.6131418943405151,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.16697333753108978,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.6131381988525391,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.16698066890239716,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 3,
+        "train": {
+          "loss": 0.569917619228363,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.2638097107410431,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.5697738528251648,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.2641390860080719,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 4,
+        "train": {
+          "loss": 0.5291675925254822,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.36023011803627014,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.5288994908332825,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.36087989807128906,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 5,
+        "train": {
+          "loss": 0.4908773601055145,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.4561094343662262,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.49049994349479675,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.45707789063453674,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 6,
+        "train": {
+          "loss": 0.4550142288208008,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.5513185858726501,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.45454204082489014,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.552603542804718,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 7,
+        "train": {
+          "loss": 0.4215284287929535,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.6457265615463257,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.42097532749176025,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.647325336933136,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 8,
+        "train": {
+          "loss": 0.3903547525405884,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.7392018437385559,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.3897336721420288,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.7411112785339355,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 9,
+        "train": {
+          "loss": 0.3614143133163452,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.8316137194633484,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.3607371747493744,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.8338303565979004,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 10,
+        "train": {
+          "loss": 0.3346165120601654,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.9228354096412659,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.3338942527770996,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 0.9253551363945007,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 11,
+        "train": {
+          "loss": 0.3098614513874054,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.012744426727295,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.3091040551662445,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.015562653541565,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 12,
+        "train": {
+          "loss": 0.28704240918159485,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.1012252569198608,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.2862584888935089,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.1043373346328735,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 13,
+        "train": {
+          "loss": 0.26604780554771423,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.1881694793701172,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.2652452290058136,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.1915702819824219,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 14,
+        "train": {
+          "loss": 0.24676363170146942,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.2734788656234741,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.2459491491317749,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.2771629095077515,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 15,
+        "train": {
+          "loss": 0.2290753722190857,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.3570643663406372,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.2282547503709793,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.3610261678695679,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 16,
+        "train": {
+          "loss": 0.21286968886852264,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.4388483762741089,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.21204791963100433,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.443081021308899,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 17,
+        "train": {
+          "loss": 0.1980358362197876,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.5187638998031616,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.19721698760986328,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.5232616662979126,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 18,
+        "train": {
+          "loss": 0.18446685373783112,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.5967556238174438,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.183654323220253,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.6015123128890991,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 19,
+        "train": {
+          "loss": 0.17206060886383057,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.6727796792984009,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.17125719785690308,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.6777878999710083,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 20,
+        "train": {
+          "loss": 0.16072019934654236,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.7468026876449585,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.15992800891399384,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.7520567178726196,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 21,
+        "train": {
+          "loss": 0.1503545194864273,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.8188031911849976,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.14957530796527863,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.8242956399917603,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 22,
+        "train": {
+          "loss": 0.14087842404842377,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.8887696266174316,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.14011354744434357,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.8944931030273438,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 23,
+        "train": {
+          "loss": 0.13221301138401031,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.9566982984542847,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.13146324455738068,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 1.9626474380493164,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 24,
+        "train": {
+          "loss": 0.1242852509021759,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.022596836090088,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.12355127185583115,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.028764009475708,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 25,
+        "train": {
+          "loss": 0.11702794581651688,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.086480140686035,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.11631017923355103,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.092858076095581,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 26,
+        "train": {
+          "loss": 0.1103796437382698,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.148369073867798,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.10967820137739182,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.15495228767395,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 27,
+        "train": {
+          "loss": 0.1042841449379921,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.2082927227020264,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.10359903424978256,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.215073823928833,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 28,
+        "train": {
+          "loss": 0.09869027137756348,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.266284942626953,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.09802136570215225,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.2732579708099365,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 29,
+        "train": {
+          "loss": 0.09355142712593079,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.322385549545288,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.09289851039648056,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.329543352127075,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 30,
+        "train": {
+          "loss": 0.0888255164027214,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.376636505126953,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.08818823844194412,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.3839738368988037,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 31,
+        "train": {
+          "loss": 0.08447421342134476,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.4290859699249268,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.08385220915079117,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.436596155166626,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 32,
+        "train": {
+          "loss": 0.08046302944421768,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.4797821044921875,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.07985585927963257,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.487459421157837,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 33,
+        "train": {
+          "loss": 0.07676062732934952,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.528777837753296,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.07616782933473587,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.536616802215576,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 34,
+        "train": {
+          "loss": 0.0733388289809227,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.5761258602142334,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.07275993376970291,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.584120988845825,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 35,
+        "train": {
+          "loss": 0.07017210870981216,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.6218812465667725,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.06960665434598923,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.6300268173217773,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 36,
+        "train": {
+          "loss": 0.067237488925457,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.6660993099212646,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.06668492406606674,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.6743907928466797,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 37,
+        "train": {
+          "loss": 0.0645141750574112,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.7088353633880615,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.06397401541471481,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.7172679901123047,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 38,
+        "train": {
+          "loss": 0.06198341026902199,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.750145196914673,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.06145520880818367,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.758713722229004,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 39,
+        "train": {
+          "loss": 0.05962825194001198,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.7900850772857666,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.059111516922712326,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.7987849712371826,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 40,
+        "train": {
+          "loss": 0.05743342638015747,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.8287088871002197,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.05692775174975395,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.8375351428985596,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 41,
+        "train": {
+          "loss": 0.055385127663612366,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.8660707473754883,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.05489001050591469,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.8750197887420654,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 42,
+        "train": {
+          "loss": 0.05347084626555443,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.9022233486175537,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.05298587307333946,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.9112911224365234,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 43,
+        "train": {
+          "loss": 0.05167929828166962,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.937217950820923,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.05120400711894035,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.946401834487915,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 44,
+        "train": {
+          "loss": 0.05000025033950806,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.9711058139801025,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04953432455658913,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 2.9804000854492188,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 45,
+        "train": {
+          "loss": 0.048424411565065384,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.0039358139038086,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04796743392944336,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.0133378505706787,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 46,
+        "train": {
+          "loss": 0.04694341495633125,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.035754442214966,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04649502411484718,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.0452606678009033,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 47,
+        "train": {
+          "loss": 0.04554964229464531,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.066608190536499,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.045109499245882034,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.0762157440185547,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 48,
+        "train": {
+          "loss": 0.04423615336418152,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.096541166305542,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04380393400788307,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1062467098236084,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 49,
+        "train": {
+          "loss": 0.04299671947956085,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1255948543548584,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04257209971547127,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1353952884674072,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 50,
+        "train": {
+          "loss": 0.0418255440890789,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.15381121635437,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.0414082296192646,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1637046337127686,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 51,
+        "train": {
+          "loss": 0.040717486292123795,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1812288761138916,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.04030721262097359,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.1912119388580322,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 52,
+        "train": {
+          "loss": 0.039667777717113495,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2078857421875,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.039264269173145294,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.21795654296875,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 53,
+        "train": {
+          "loss": 0.03867210075259209,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2338171005249023,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.038275111466646194,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2439727783203125,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 54,
+        "train": {
+          "loss": 0.037726517766714096,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2590579986572266,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03733581677079201,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2692956924438477,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 55,
+        "train": {
+          "loss": 0.03682740405201912,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.2836408615112305,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03644274175167084,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.293959379196167,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 56,
+        "train": {
+          "loss": 0.035971466451883316,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3075969219207764,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.0355926938354969,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3179924488067627,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 57,
+        "train": {
+          "loss": 0.03515574708580971,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3309543132781982,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03478256240487099,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3414275646209717,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 58,
+        "train": {
+          "loss": 0.03437740355730057,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.353743553161621,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03400968760251999,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.364290237426758,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 59,
+        "train": {
+          "loss": 0.033633969724178314,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3759889602661133,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.033271510154008865,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.386608839035034,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 60,
+        "train": {
+          "loss": 0.03292305767536163,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.3977184295654297,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.032565709203481674,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.4084084033966064,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 61,
+        "train": {
+          "loss": 0.032242584973573685,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.4189538955688477,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.031890157610177994,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.429713487625122,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 62,
+        "train": {
+          "loss": 0.03159056976437569,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.4397194385528564,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03124290145933628,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.450547456741333,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 63,
+        "train": {
+          "loss": 0.030965222045779228,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.460036039352417,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.03062216378748417,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.470930337905884,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 64,
+        "train": {
+          "loss": 0.030364826321601868,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.4799258708953857,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.030026279389858246,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.4908840656280518,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 65,
+        "train": {
+          "loss": 0.029787905514240265,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.499406099319458,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.0294537004083395,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.5104281902313232,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 66,
+        "train": {
+          "loss": 0.029233023524284363,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.51849627494812,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.028903037309646606,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.52958083152771,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 67,
+        "train": {
+          "loss": 0.028698883950710297,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.5372133255004883,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.028373003005981445,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.548358201980591,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 68,
+        "train": {
+          "loss": 0.02818424440920353,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.555574417114258,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.02786235511302948,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.566779375076294,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 69,
+        "train": {
+          "loss": 0.02768802084028721,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.573594331741333,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.027370011433959007,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.584857940673828,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 70,
+        "train": {
+          "loss": 0.027209170162677765,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.5912883281707764,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.0268949493765831,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.6026089191436768,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 71,
+        "train": {
+          "loss": 0.026746727526187897,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.6086695194244385,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.02643618732690811,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.620046854019165,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 72,
+        "train": {
+          "loss": 0.026299819350242615,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.625751495361328,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.02599283494055271,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.6371850967407227,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 73,
+        "train": {
+          "loss": 0.025867581367492676,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.642547369003296,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.025564098730683327,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.6540348529815674,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 74,
+        "train": {
+          "loss": 0.025449275970458984,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.659067392349243,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.025149190798401833,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.67060923576355,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 75,
+        "train": {
+          "loss": 0.025044187903404236,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.675323486328125,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.024747416377067566,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.686918258666992,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 76,
+        "train": {
+          "loss": 0.02465163916349411,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.6913259029388428,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.024358121678233147,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.702972173690796,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 77,
+        "train": {
+          "loss": 0.02427101321518421,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.7070844173431396,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.023980634286999702,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.718782663345337,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 78,
+        "train": {
+          "loss": 0.023901721462607384,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.722609281539917,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.023614436388015747,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.7343575954437256,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 79,
+        "train": {
+          "loss": 0.023543238639831543,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.737907648086548,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.023258967325091362,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.7497060298919678,
+          "pairs": 3
+        }
+      },
+      {
+        "step": 80,
+        "train": {
+          "loss": 0.023195020854473114,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.7529900074005127,
+          "pairs": 6
+        },
+        "validation": {
+          "loss": 0.022913726046681404,
+          "accuracy": 1.0,
+          "ties": 0,
+          "margin": 3.764836311340332,
+          "pairs": 3
+        }
+      }
+    ],
+    "validation": {
+      "loss": 0.022913726046681404,
+      "accuracy": 1.0,
+      "ties": 0,
+      "margin": 3.764836311340332,
+      "pairs": 3
+    },
+    "length_baseline_accuracy": 0.0
+  },
+  "sft": {
+    "selected_step": 30,
+    "validation_nll": 2.5910463333129883,
+    "history": [
+      {
+        "step": 0,
+        "nll": 3.080857276916504,
+        "response_tokens": 9
+      },
+      {
+        "step": 10,
+        "nll": 2.709719763861762,
+        "response_tokens": 9
+      },
+      {
+        "step": 20,
+        "nll": 2.6347954008314343,
+        "response_tokens": 9
+      },
+      {
+        "step": 30,
+        "nll": 2.5910463333129883,
+        "response_tokens": 9
+      }
+    ],
+    "objective": "response-only supervised fine-tuning on AI-preferred answers"
+  },
+  "rl": {
+    "selected_step": 0,
+    "selection_metric": "validation learned reward",
+    "validation_reward": 0.6967842181523641,
+    "history": [
+      {
+        "step": 0,
+        "validation": {
+          "reward": 0.6967842181523641,
+          "count": 3,
+          "truncated": 0
+        }
+      },
+      {
+        "step": 1,
+        "loss": 9.924619674682617,
+        "sampled_sequence_kl": 0.0,
+        "reward": 0.644431471824646,
+        "baseline_after": 0.0644431471824646,
+        "gradient_norm": 0.5950025320053101,
+        "truncated": 2
+      },
+      {
+        "step": 2,
+        "loss": 13.178800582885742,
+        "sampled_sequence_kl": -0.0011272430419921875,
+        "reward": 0.9137500524520874,
+        "baseline_after": 0.14937947630882265,
+        "gradient_norm": 0.8456390500068665,
+        "truncated": 2
+      },
+      {
+        "step": 3,
+        "loss": 5.605229377746582,
+        "sampled_sequence_kl": 0.000244140625,
+        "reward": 0.4901333153247833,
+        "baseline_after": 0.18345364129543307,
+        "gradient_norm": 0.9632561802864075,
+        "truncated": 1
+      },
+      {
+        "step": 4,
+        "loss": 23.134841918945312,
+        "sampled_sequence_kl": -0.005280971527099609,
+        "reward": 1.6862713098526,
+        "baseline_after": 0.33376181300878527,
+        "gradient_norm": 0.9474625587463379,
+        "truncated": 2
+      },
+      {
+        "step": 5,
+        "loss": 2.9804797172546387,
+        "sampled_sequence_kl": 0.009264945983886719,
+        "reward": 0.535568356513977,
+        "baseline_after": 0.35389614262938507,
+        "gradient_norm": 0.6394124627113342,
+        "truncated": 2
+      },
+      {
+        "step": 6,
+        "loss": 2.6312310695648193,
+        "sampled_sequence_kl": -0.013537883758544922,
+        "reward": 0.5199722647666931,
+        "baseline_after": 0.3705714418777228,
+        "gradient_norm": 0.2984558343887329,
+        "truncated": 1
+      },
+      {
+        "step": 7,
+        "loss": -12.19059944152832,
+        "sampled_sequence_kl": -0.008289813995361328,
+        "reward": -0.4059654474258423,
+        "baseline_after": 0.29295920499757533,
+        "gradient_norm": 0.5278324484825134,
+        "truncated": 2
+      },
+      {
+        "step": 8,
+        "loss": 7.990256309509277,
+        "sampled_sequence_kl": 0.002285003662109375,
+        "reward": 0.8001984357833862,
+        "baseline_after": 0.34367170186575297,
+        "gradient_norm": 0.27671435475349426,
+        "truncated": 2
+      },
+      {
+        "step": 9,
+        "loss": 5.240310192108154,
+        "sampled_sequence_kl": 0.000469207763671875,
+        "reward": 1.0042649507522583,
+        "baseline_after": 0.4097286902523283,
+        "gradient_norm": 0.3046458065509796,
+        "truncated": 0
+      },
+      {
+        "step": 10,
+        "loss": 8.97095012664795,
+        "sampled_sequence_kl": 0.017645835876464844,
+        "reward": 0.9902068376541138,
+        "baseline_after": 0.4676882781973103,
+        "gradient_norm": 0.38726380467414856,
+        "truncated": 2,
+        "validation": {
+          "reward": 0.6967842181523641,
+          "count": 3,
+          "truncated": 0
+        }
+      }
+    ],
+    "objective": "on-policy sequence REINFORCE with sampled reference KL penalty",
+    "warning": "Learned reward is a proxy, not evidence of safety or helpfulness."
+  },
+  "rl_adapter_changed": true,
+  "reloaded_selected_policy_logp": -7.770785331726074,
+  "evaluation_parser_checked": true
+}

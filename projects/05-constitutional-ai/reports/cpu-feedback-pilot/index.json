@@ -1,0 +1,21 @@
+{
+  "files": [
+    "manifest.json",
+    "prompts.json",
+    "feedback/audit.json",
+    "feedback/records.json",
+    "feedback/pairs.json"
+  ],
+  "feedback": {
+    "total": 6,
+    "statuses": {
+      "truncated_generation": 4,
+      "invalid_judge": 2
+    },
+    "accepted_by_split": {},
+    "winner_counts": {}
+  },
+  "training_complete": false,
+  "evaluation_complete": false,
+  "interpretation": "Completion and learned reward do not establish alignment improvement."
+}

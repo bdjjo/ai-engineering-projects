@@ -1,0 +1,41 @@
+{
+  "seed": 1337,
+  "actor": {
+    "name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "main"
+  },
+  "critic": {
+    "name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "main"
+  },
+  "judge": {
+    "name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "main"
+  },
+  "max_new_tokens": 128,
+  "max_context": 2048,
+  "max_length": 1024,
+  "rollout_tokens": 64,
+  "reward_steps": 40,
+  "reward_lr": 0.001,
+  "sft_steps": 10,
+  "sft_lr": 0.0002,
+  "rl_steps": 5,
+  "rl_lr": 1e-05,
+  "kl_coef": 0.05,
+  "batch_size": 2,
+  "eval_every": 5,
+  "threads": 2,
+  "lora_rank": 8,
+  "prompt_ids": [
+    "C04-train-1",
+    "C13-train-1",
+    "C15-train-1",
+    "C04-validation-3",
+    "C13-validation-3",
+    "C15-validation-3",
+    "C04-test-4",
+    "C13-test-4",
+    "C15-test-4"
+  ]
+}

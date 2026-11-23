@@ -1,0 +1,9 @@
+{
+  "total": 6,
+  "statuses": {
+    "truncated_generation": 4,
+    "invalid_judge": 2
+  },
+  "accepted_by_split": {},
+  "winner_counts": {}
+}

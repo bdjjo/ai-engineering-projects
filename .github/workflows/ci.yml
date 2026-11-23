@@ -37,6 +37,12 @@ jobs:
           - os: windows-latest
             python: '3.12'
             project: 04-distributed-llm-training
+          - os: ubuntu-latest
+            python: '3.12'
+            project: 05-constitutional-ai
+          - os: windows-latest
+            python: '3.12'
+            project: 05-constitutional-ai
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     defaults:

@@ -1,0 +1,159 @@
+{
+  "created_utc": "2026-11-23T07:20:39.321682+00:00",
+  "git_commit_at_start": "da81f18f66b324577f31d99a03fafbaf54ca3ba5",
+  "source_hashes": {
+    "run_cai.py": "6219087a4333dd53f716e32ae94d6a095db10571998219d97edbde93cff51982",
+    "pyproject.toml": "223bcb98ba27c541c093305e512b39a45450593c640e97196d3eb929c5e8df83",
+    "src/cai/__init__.py": "0a09b8c441dd226f46a2fb00f0b43831ef5dd468010bd46f02172008c8dafae6",
+    "src/cai/constitution.py": "341a45ba5718ae90bf84dbf268604d70315bfa0d242b35daedddc9e37f0368c6",
+    "src/cai/data.py": "1b1b3658fe2fb9ab5b48c62eb52229fdd46c2a109541771ac196217d0e682d22",
+    "src/cai/evaluation.py": "afd81ddf894c49e10b499bb6969b66e166ece2e2caa4a525956de9e3e02ea444",
+    "src/cai/feedback.py": "ead730f501cc7ddeb64fd82c794270db1356831b03a14eead2c1b33b11c256c2",
+    "src/cai/io.py": "3655f0a071b4f3504f6b5d4cf03dc8478649b953001726fe08eecf0cc56a9a28",
+    "src/cai/modeling.py": "8a05419ec6661235a38ecc64f4f73f1a8d9722a3c79380c23131db261d9efd9f",
+    "src/cai/pipeline.py": "2884d205c6a9d29b50f347a9754a338d72a31d35d10b4879060b9019bdc8c8b3",
+    "src/cai/policy.py": "306ef5de55eb90faf597597a115aeaafabe8a8c62431a41890f06e80fe9b7a2c",
+    "src/cai/reward.py": "158f8d33eabe72f7151405948f8b60459e7235bd3cb1c9c80043f9b614e1ff9d"
+  },
+  "config": {
+    "seed": 1337,
+    "actor": {
+      "name": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "main"
+    },
+    "critic": {
+      "name": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "main"
+    },
+    "judge": {
+      "name": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "main"
+    },
+    "max_new_tokens": 256,
+    "max_context": 2048,
+    "max_length": 1024,
+    "rollout_tokens": 64,
+    "reward_steps": 40,
+    "reward_lr": 0.001,
+    "sft_steps": 10,
+    "sft_lr": 0.0002,
+    "rl_steps": 5,
+    "rl_lr": 1e-05,
+    "kl_coef": 0.05,
+    "batch_size": 2,
+    "eval_every": 5,
+    "threads": 2,
+    "lora_rank": 8,
+    "prompt_ids": [
+      "C04-train-1",
+      "C13-train-1",
+      "C15-train-1",
+      "C04-validation-3",
+      "C13-validation-3",
+      "C15-validation-3",
+      "C04-test-4",
+      "C13-test-4",
+      "C15-test-4"
+    ]
+  },
+  "data_sha256": "c496744ace9e261c99bcab086241f5f3c718ef9e17fb5602794edc341b6fbb05",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "torch": "2.7.1+cpu",
+    "transformers": "4.51.3",
+    "peft": "0.15.2",
+    "accelerate": "1.6.0"
+  },
+  "actor": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "critic": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "judge": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "constitution": [
+    {
+      "id": "C01",
+      "category": "violence",
+      "rule": "Do not help injure or intimidate people; offer de-escalation."
+    },
+    {
+      "id": "C02",
+      "category": "illegal_activity",
+      "rule": "Do not facilitate wrongdoing; offer lawful alternatives."
+    },
+    {
+      "id": "C03",
+      "category": "dangerous_information",
+      "rule": "Avoid actionable instructions for physical harm."
+    },
+    {
+      "id": "C04",
+      "category": "deception",
+      "rule": "Do not fabricate evidence, impersonate others, or mislead."
+    },
+    {
+      "id": "C05",
+      "category": "manipulation",
+      "rule": "Respect consent; do not exploit emotions or vulnerabilities."
+    },
+    {
+      "id": "C06",
+      "category": "hate_speech",
+      "rule": "Do not demean or discriminate against protected groups."
+    },
+    {
+      "id": "C07",
+      "category": "privacy",
+      "rule": "Protect personal information and obtain consent for tracking."
+    },
+    {
+      "id": "C08",
+      "category": "child_safety",
+      "rule": "Protect children from exploitation and unsafe interactions."
+    },
+    {
+      "id": "C09",
+      "category": "self_harm",
+      "rule": "Respond with care; do not encourage or instruct self-harm."
+    },
+    {
+      "id": "C10",
+      "category": "misinformation",
+      "rule": "Correct harmful false premises; do not invent evidence."
+    },
+    {
+      "id": "C11",
+      "category": "cybersecurity",
+      "rule": "Support authorized defense, not intrusion or credential theft."
+    },
+    {
+      "id": "C12",
+      "category": "financial_harm",
+      "rule": "Do not assist scams, fraud, or financial exploitation."
+    },
+    {
+      "id": "C13",
+      "category": "helpfulness",
+      "rule": "Answer reasonable requests directly; avoid needless refusals."
+    },
+    {
+      "id": "C14",
+      "category": "autonomy",
+      "rule": "Explain choices respectfully without coercion or condescension."
+    },
+    {
+      "id": "C15",
+      "category": "uncertainty",
+      "rule": "State uncertainty and knowledge limits; avoid false confidence."
+    }
+  ],
+  "device": "cpu",
+  "gpu": null
+}
