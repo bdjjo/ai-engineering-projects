@@ -13,7 +13,7 @@ includes runnable code, tests, measured results, and documented limitations.
 | [02 · SFT and DPO](projects/02-dpo-training-pipeline) | LoRA fine-tuning, a custom DPO loss, and blinded preference evaluation | Two DPO learning rates compared on a T4; 64 response pairs generated, evaluation incomplete |
 | [03 · Mechanistic interpretability](projects/03-mechanistic-interpretability) | GPT-2 IOI head interventions, sparse autoencoders, and a feature browser | [16-prompt head sweep and four measured CPU SAE runs](projects/03-mechanistic-interpretability/docs/RESULTS.md) |
 | [04 · Distributed GPT training](projects/04-distributed-llm-training) | FSDP/DDP, AMP, activation checkpointing, async recovery, profiling, and MFU accounting | [Exact CPU two-rank recovery and a 124M T4 pilot](projects/04-distributed-llm-training/docs/RESULTS.md); 3,901 timed tok/s, 4.62% estimated MFU |
-| [05 · Constitutional AI](projects/05-constitutional-ai) | Critique/revision, checked AI preferences, a reward model, LoRA SFT, and reference-regularized REINFORCE | [CPU integration and 54-prompt T4 feedback run](projects/05-constitutional-ai/docs/RESULTS.md); no accepted validation pairs, real-data training blocked |
+| [05 · Constitutional AI](projects/05-constitutional-ai) | Critique/revision, checked AI preferences, a reward model, LoRA SFT, and reference-regularized REINFORCE | [CPU integration, T4 feedback, and judge calibration](projects/05-constitutional-ai/docs/RESULTS.md); unreliable labels detected, real-data training halted |
 
 ## Get started
 

@@ -132,7 +132,7 @@ uses the pinned 1.5B model for critique/revision as well as judging, and allows 
 new tokens with a 4,096-token context. Revised instructions request concise reviews,
 direct user-facing revisions, and ties for wording-only changes. This bundles several
 changes to diagnose feasibility; it is not a controlled attribution experiment.
-It has not been run. Review raw pairs before expanding or fitting any model.
+Its completed outcome is reported below; no model was fitted on its feedback.
 
 ## Completed 12-prompt T4 follow-up
 
@@ -151,14 +151,42 @@ These observations motivate evaluator calibration before further data generation
 See the [follow-up audit](../reports/colab-t4-followup/feedback/audit.json),
 [raw records](../reports/colab-t4-followup/feedback/records.json), and
 [verification](../reports/colab-t4-followup/verification.json).
-The earlier paragraph describes the preset at preparation time; it has now been run.
+
+
+## Judge calibration and stopping decision
+
+The legacy 1.5B judge scored 3/8, correctly identifying only the expected ties.
+The structured 1.5B run originally scored 0/12 because the parser rejected fenced
+JSON. Separately labeled parser-only rescoring recovered 2/12; no model was rerun.
+The original and rescored artifacts remain under `reports/judge-calibration-structured/`.
+
+The Qwen 3B FP16 run scored **3/12**: two arithmetic orientations and one identical
+incorrect-answer tie. Six cases had invalid decision values, two had answer-order
+disagreements, and one had an incorrect tie. All explanations copied the example
+placeholder “one brief comparison”; several decisions copied “A or B or TIE”.
+The results show a protocol failure as well as poor decision quality.
+
+An initial FP32 process was killed with SIGKILL; memory pressure was suspected,
+but no memory trace established the cause. The completed attempt loaded FP16
+weights with `low_cpu_mem_usage=True` using a temporary Colab loader override.
+That override is recorded in the export; the repository's default loader remains
+FP32. The 3B run is therefore not an exact reproduction using the default CLI,
+and the 1.5B/3B results do not isolate model size from precision.
+
+The exact 3B revision was `aa8e72537993ba99e69dfaafa59ed015b17504d1`.
+Inspect the [unaltered 3B export](../reports/judge-calibration-3b-fp16/calibration.json)
+and [verification](../reports/judge-calibration-3b-fp16/verification.json).
+The current experiment series stops here. Real-data reward/SFT/RL training remains
+disabled because reliable preferences were not obtained. This project demonstrates
+an implemented pipeline, reproducible diagnostics, and a documented stopping
+decision; it does not demonstrate successful real-model alignment.
 
 ## What remains unverified
 
 Full real-data policy training and a reliable held-out safety/helpfulness comparison
 have not been completed. There are no human ratings,
 multiple-seed comparisons, or independent benchmark results. The implemented
-evaluation and follow-up configuration should not be described as completed experiments.
+policy evaluation should not be described as a completed experiment.
 
 The next useful experiment is to improve feedback quality, obtain enough valid
 preferences in both fitting partitions, and review the resulting labels before

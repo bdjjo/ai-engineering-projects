@@ -1,0 +1,7 @@
+{
+  "source_sha256": "10a291565654e595a6bb518ccfea9099190c2112752cd4ce4292bd869fec7634",
+  "score_recalculated": true,
+  "correct": 3,
+  "total": 12,
+  "scope": "Owner-supplied FP16 diagnostic export; precision override recorded by Colab wrapper"
+}
