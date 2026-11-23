@@ -1,10 +1,11 @@
-# AI Engineering Projects
+# LLM Research Engineering — Training, Alignment & Interpretability
 
 [![Tests](https://github.com/bdjjo/ai-engineering-projects/actions/workflows/ci.yml/badge.svg)](https://github.com/bdjjo/ai-engineering-projects/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Implementations and experiments in machine learning, with runnable code, tests, and
-measured results. Each project has its own setup instructions and dependencies.
+Reproducible LLM experiments in PyTorch, spanning transformer training, preference
+optimization, interpretability, distributed systems, and AI alignment. Each project
+includes runnable code, tests, measured results, and documented limitations.
 
 | Project | What it covers | Results |
 |---|---|---|
