@@ -95,12 +95,51 @@ Another pair changed preference when answer order was reversed. That is evidence
 of an unreliable label, not a tie to turn into a training example. The full audit
 preserves the two raw judgments.
 
+## Verified Colab T4 feedback collection
+
+The owner supplied a complete export from a Tesla T4 run using the 0.5B actor/critic,
+1.5B judge, seed 1337, and a 256-token generation budget. All 54 non-test prompts
+were processed. The prompt hash, record identities, reconstructed preference pairs,
+and audit counts were independently checked against the exported files.
+
+| Outcome | Prompts |
+|---|---:|
+| Identical original and revision | 19 |
+| Consistent tie | 4 |
+| Answer-order disagreement | 8 |
+| Accepted preference | 4 |
+| Truncated generation | 19 |
+
+All four accepted preferences belong to training; validation has zero. Three prefer
+the original. The sole preferred revision changes a short refusal's wording without
+adding meaningful help. Passing the mechanical label checks does not establish that
+a preference is educationally useful or semantically correct.
+
+Across the 19 truncated records, 18 originals, 11 revisions, and 4 critiques reached
+the budget; these counts overlap. Some revisions became evaluation commentary
+instead of speaking to the user. The results support a diagnosis of poor feedback
+quality, not a safety improvement. No real-data policy training is reported.
+
+Inspect the [original exported records](../reports/colab-t4-feedback/feedback/records.json),
+[audit](../reports/colab-t4-feedback/feedback/audit.json),
+[run manifest](../reports/colab-t4-feedback/manifest.json), and
+[verification](../reports/colab-t4-feedback/verification.json).
+The manifest preserves the actual source hashes and model revisions used in this run.
+
+The follow-up preset `configs/colab-feedback-followup.json` reserves all test prompts
+and collects 8 training plus 4 validation scenarios. It retains the 0.5B actor,
+uses the pinned 1.5B model for critique/revision as well as judging, and allows 512
+new tokens with a 4,096-token context. Revised instructions request concise reviews,
+direct user-facing revisions, and ties for wording-only changes. This bundles several
+changes to diagnose feasibility; it is not a controlled attribution experiment.
+It has not been run. Review raw pairs before expanding or fitting any model.
+
 ## What remains unverified
 
-The larger Colab preset, full real-data policy training, and a reliable held-out
-safety/helpfulness comparison have not been completed. There are no human ratings,
+Full real-data policy training and a reliable held-out safety/helpfulness comparison
+have not been completed. There are no human ratings,
 multiple-seed comparisons, or independent benchmark results. The implemented
-evaluation and GPU configuration should not be described as completed experiments.
+evaluation and follow-up configuration should not be described as completed experiments.
 
 The next useful experiment is to improve feedback quality, obtain enough valid
 preferences in both fitting partitions, and review the resulting labels before

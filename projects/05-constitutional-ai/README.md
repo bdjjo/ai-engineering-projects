@@ -11,7 +11,9 @@ The feedback, loss functions, training loops, and evaluation accounting are writ
 in Python/PyTorch. Pretrained language models, tokenizers, and LoRA layers come
 from Transformers and PEFT.
 
-**Status:** the complete training path has passed an offline CPU integration test.
+**Status:** T4 feedback collection completed on 54 prompts: four accepted training
+pairs and zero validation pairs. Real-data training is blocked by insufficient
+valid preferences. The complete training path has passed an offline CPU integration test.
 That test uses a random tiny model and scripted feedback. It proves that the stages
 connect and update the intended parameters; it does not demonstrate improved safety.
 See [measured results](docs/RESULTS.md) for the separate small-model feedback experiment

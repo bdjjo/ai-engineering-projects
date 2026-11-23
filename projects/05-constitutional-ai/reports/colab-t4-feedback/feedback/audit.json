@@ -1,0 +1,17 @@
+{
+  "total": 54,
+  "statuses": {
+    "identical": 19,
+    "tie": 4,
+    "order_disagreement": 8,
+    "accepted": 4,
+    "truncated_generation": 19
+  },
+  "accepted_by_split": {
+    "train": 4
+  },
+  "winner_counts": {
+    "original": 3,
+    "revised": 1
+  }
+}

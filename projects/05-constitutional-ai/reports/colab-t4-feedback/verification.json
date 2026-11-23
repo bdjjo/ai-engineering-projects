@@ -1,0 +1,27 @@
+{
+  "archive_sha256": "8131f6a03e19be1ec81c1caadf5e7b73786f3a6e5f13260b4495d954034255c8",
+  "prompts_and_pairs_verified": true,
+  "audit_recalculated": {
+    "total": 54,
+    "statuses": {
+      "identical": 19,
+      "tie": 4,
+      "order_disagreement": 8,
+      "accepted": 4,
+      "truncated_generation": 19
+    },
+    "accepted_by_split": {
+      "train": 4
+    },
+    "winner_counts": {
+      "original": 3,
+      "revised": 1
+    }
+  },
+  "truncated_stages": {
+    "original": 18,
+    "critique": 4,
+    "revised": 11
+  },
+  "scope": "Owner-supplied T4 feedback export; no policy training or evaluation"
+}

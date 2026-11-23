@@ -1,0 +1,44 @@
+{
+  "seed": 1337,
+  "actor": {
+    "name": "Qwen/Qwen2.5-0.5B-Instruct",
+    "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+  },
+  "critic": {
+    "name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "judge": {
+    "name": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  "max_new_tokens": 512,
+  "max_context": 4096,
+  "max_length": 2048,
+  "rollout_tokens": 64,
+  "reward_steps": 100,
+  "reward_lr": 0.001,
+  "sft_steps": 40,
+  "sft_lr": 0.0002,
+  "rl_steps": 20,
+  "rl_lr": 1e-05,
+  "kl_coef": 0.05,
+  "batch_size": 2,
+  "eval_every": 10,
+  "threads": 2,
+  "lora_rank": 8,
+  "prompt_ids": [
+    "C04-train-1",
+    "C04-train-2",
+    "C04-validation-3",
+    "C07-train-1",
+    "C07-train-2",
+    "C07-validation-3",
+    "C13-train-1",
+    "C13-train-2",
+    "C13-validation-3",
+    "C15-train-1",
+    "C15-train-2",
+    "C15-validation-3"
+  ]
+}
