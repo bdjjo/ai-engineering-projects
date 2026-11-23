@@ -41,3 +41,26 @@ Expected labels are authored diagnostic labels, not independent human annotation
 They are separate from training data. Even passing all eight cases would only
 establish basic protocol competence, not reliable safety evaluation. No calibration
 model run has been completed yet; training remains disabled.
+
+## Structured judge redesign
+
+The first calibration has now run: 3/8 correct, consisting only of the three
+expected ties. All five clear preferences failed (three ties and two order
+disagreements). This matches an always-TIE baseline on these authored cases.
+The preserved report is `reports/judge-calibration-legacy/calibration.json`.
+
+The experimental replacement prioritizes factual correctness and relevance, asks
+for a brief comparison, and parses strict JSON with `reason` and `decision` fields.
+Both candidate orders must still agree. Invalid JSON and cut-off responses remain
+invalid, never neutral labels. It has not replaced the pipeline's feedback judge.
+
+```bash
+python scripts/calibrate_judge.py --mode structured --device cuda --out outputs/judge-structured-01
+```
+
+This runs the original eight cases and four additional diagnostic cases, with a
+256-token budget for each judgment. It changes prompt, output schema, and budget
+together. The additional cases were written after examining the earlier failures;
+they are fresh examples, not independent or blinded evaluation. No measured result
+is claimed for the redesign. Inspect explanations and both raw decisions before
+collecting further training labels.
