@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "093b3715c374a70db9ac29e6dea735388ce5ee28b6b26ba39d16f54f6227d1a7",
+  "prompts_and_pairs_verified": true,
+  "audit_recalculated": {
+    "total": 12,
+    "statuses": {
+      "tie": 9,
+      "identical": 2,
+      "order_disagreement": 1
+    },
+    "accepted_by_split": {},
+    "winner_counts": {}
+  },
+  "truncated_stages": {},
+  "scope": "Owner-supplied T4 feedback export; no policy training or evaluation"
+}

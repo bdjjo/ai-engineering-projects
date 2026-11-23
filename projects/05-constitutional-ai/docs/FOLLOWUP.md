@@ -23,4 +23,21 @@ revisions that answer the evaluator. Keep ties, truncation, and order-disagreeme
 checks enabled. Do not begin reward/SFT/RL training merely because each split has
 one accepted example; assess label quality and sample size first.
 
-No follow-up result or improvement is claimed until the actual export is reviewed.
+The completed follow-up produced 9 ties, 2 identical responses, 1 order disagreement,
+and no accepted preferences. No generation was truncated. See RESULTS.md.
+
+## Next: calibrate the judge
+
+Before collecting more data, run the eight authored diagnostic cases:
+
+```bash
+python scripts/calibrate_judge.py --device cuda --out outputs/judge-calibration-01
+```
+
+Use a new Drive-backed output path on Colab. Share `calibration.json` for review.
+The cases include clear factual differences, answer-versus-commentary, uncertainty,
+privacy consent, and genuine ties. Each case is judged in both candidate orders.
+Expected labels are authored diagnostic labels, not independent human annotations.
+They are separate from training data. Even passing all eight cases would only
+establish basic protocol competence, not reliable safety evaluation. No calibration
+model run has been completed yet; training remains disabled.

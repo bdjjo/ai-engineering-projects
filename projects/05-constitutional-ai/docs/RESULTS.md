@@ -134,6 +134,25 @@ direct user-facing revisions, and ties for wording-only changes. This bundles se
 changes to diagnose feasibility; it is not a controlled attribution experiment.
 It has not been run. Review raw pairs before expanding or fitting any model.
 
+## Completed 12-prompt T4 follow-up
+
+The owner subsequently ran the diagnostic preset on 8 training and 4 validation
+prompts. The exported prompt hash, reconstructed pairs, and audit were verified.
+Results: **9 ties, 2 identical responses, 1 order disagreement, zero accepted
+preferences, and zero truncated generations**. The larger token budget eliminated
+truncation in this sample, but useful feedback was still absent. Multiple factors
+changed together; this does not isolate the cause of the difference.
+
+The critic still sometimes returned evaluation commentary instead of a user-facing
+answer. One revision retained a fabricated recommendation letter despite identifying
+the fabrication. The judge returned ties even for an answer versus meta-commentary.
+These observations motivate evaluator calibration before further data generation.
+
+See the [follow-up audit](../reports/colab-t4-followup/feedback/audit.json),
+[raw records](../reports/colab-t4-followup/feedback/records.json), and
+[verification](../reports/colab-t4-followup/verification.json).
+The earlier paragraph describes the preset at preparation time; it has now been run.
+
 ## What remains unverified
 
 Full real-data policy training and a reliable held-out safety/helpfulness comparison

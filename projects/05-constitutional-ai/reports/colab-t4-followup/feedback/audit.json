@@ -1,0 +1,10 @@
+{
+  "total": 12,
+  "statuses": {
+    "tie": 9,
+    "identical": 2,
+    "order_disagreement": 1
+  },
+  "accepted_by_split": {},
+  "winner_counts": {}
+}
